@@ -38,26 +38,16 @@ const Layout = ({children}) => {
     branch: 'Agencia 1234',
   }
   const options = ([
-    {name: 'Definiciones', ref: '#' , },
-    {name: 'Operaciones', ref: '#'},
-    {name: 'Eventos Corporativos', ref: '#'},
-    {name: 'Consultas', ref: '#'},
-    {name: 'Información en BT', ref: '#'},
+    {name: 'Consultas', ref: '#' ,dropdown: [
+      {name: 'Dcocumentacion Pendiente', ref: '/Documentation-Pending-Delivery'} 
+      ]}, 
+    {name: 'Registros', ref: '#'},
+    {name: 'Información', ref: '#'},
+    {name: 'Sistemas', ref: '#'}, 
     {name: 'Reportes', ref: '#', dropdown: [
-      {name: 'Reportes Varios', ref: '#'},
-      {name: 'Egresos y Rescates', ref: '#'},
-      {name: 'Rescates Pendientes', ref: '#'},
-      {name: 'Comisiones Pendientes', ref: '#'},
-      {name: 'Ingresos y Suscripciones', ref: '#'},
-      {name: 'Intereses Bancarios', ref: '#'},
-      {name: 'Cartas de Liquidación', ref: '#'},
-      {name: 'Op. de Inversión por Liquidar', ref: '#'},
-      {name: 'Resumen de operaciones', ref: '#'},
-      {name: 'Sustento Comisión Custodia', ref: '#'},
-      {name: 'Obligaciones Compra Venta Pendientes', ref: '#'},
-      {name: 'Operaciones Spot, Forward, Swaps, y Opciones', ref: '#'},
-      {name: 'Reportes Operativos en Formato XLS', ref: '#'},
-      ]},])
+      {name: 'Generación de reporte deuda documentaria en sistema', ref: '/Documentary-Deb-Generation-System'} 
+      ]},
+    ])
 
   return (
     <div>
