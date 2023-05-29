@@ -24,10 +24,8 @@ const DocumentationPendingDelivery = () => {
             { name: 'DOCUMETOS QUE ADEUDA', className: 'difference' },
         ],
         data: [
-            [`${date}`, '8074272', 'Razon social', 'Rescate Parcial valor desconocido', 1, 1,
-                '23454566', 'Recibido'],
-            [`${date}`, '80742256', 'Razon social', 'Deposito', 1, 2,
-                '1234567', 'Pendiente' ]
+            ['', 'Angamos-043', '', '', '', '','', ''],
+            ['SFP $', '51303', '19/08/2003', '73,735.58', '16689', 'LAZARTE MELGAR O LAZART','ORLOFF FERNANDEZ CARMEN IVAOVA', 'CONTRATO' ]
         ]
     }
 
@@ -45,12 +43,9 @@ const DocumentationPendingDelivery = () => {
                 </div>
                 <div className='documentDebGeneration-body'> 
                     <div className='documentDebGeneration-body-filters'>
-                        <div className='date-range'>
-                           
-                          
+                        <div className='date-range'> 
                         </div>
-                    </div>
-                    
+                    </div> 
                         <button className='btn btn-primary'>Consultar</button>
                         <button className='btn btn-primary'>Exportar</button>
                         <button className='btn btn-primary'>Imprimir</button>
