@@ -3,8 +3,7 @@ import Table from './Table'
 import { useSearchParams } from "react-router-dom";
 import Select from 'react-select';
  
-const DocumentationPendingDelivery = () => {
-
+const DocumentationPendingDelivery = () => { 
     const [searchParams, setSearchParams] = useSearchParams(); 
     const now = new Date()
     const formatDate = (date) => {
@@ -49,15 +48,12 @@ const DocumentationPendingDelivery = () => {
                         <button className='btn btn-primary'>Consultar</button>
                         <button className='btn btn-primary'>Exportar</button>
                         <button className='btn btn-primary'>Imprimir</button>
-                        <button className='btn btn-primary'>Salir</button>
-                   
+                        <button className='btn btn-primary'>Salir</button> 
                 </div>
-            </div>
- 
+            </div>  
           <div className='documentDebGeneration-table'>
           <Table data={tableData} />
-          </div> 
-          
+          </div>  
         </>
     )
 }
