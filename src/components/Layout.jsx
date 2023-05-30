@@ -39,7 +39,7 @@ const Layout = ({children}) => {
   }
   const options = ([
     {name: 'Consultas', ref: '#' ,dropdown: [
-      {name: 'Dcocumentacion Pendiente', ref: '/Documentation-Pending-Delivery'} 
+      {name: 'Documentacion Pendiente', ref: '/Documentation-Pending-Delivery'} 
       ]}, 
     {name: 'Registros', ref: '#'},
     {name: 'Información', ref: '#'},
