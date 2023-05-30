@@ -42,29 +42,21 @@ const StyledTableCell = withStyles((theme) => ({
         backgroundColor: theme.palette.action.selected,
       },
       '&$disabled': {
-        opacity: 0.5,
+        opacity: 0,
       },
     },
   }))(TableRow);
-
-
-
+ 
  
 const DocumentationPendingDelivery = () => { 
 
     const rows = [
         createData('1', 'Edwin', '561615616', 'Activo'),
-      ];
-
-
+      ]; 
     const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(6);
-
+    const [rowsPerPage, setRowsPerPage] = React.useState(6); 
     const classes = useStyles(); 
-    const [ListUser] = React.useState([]);
-     
-    const [age2, setAge2] = React.useState('');
-    const [searchParams, setSearchParams] = useSearchParams(); 
+    const [ListUser] = React.useState([]); 
     const now = new Date()
     const formatDate = (date) => {
         return date < 10 ? `0${date}` : date
@@ -218,8 +210,11 @@ const DocumentationPendingDelivery = () => {
       <TableBody>
         {
           setListUser.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((element,key) =>
-          <StyledTableRow>  
-          <StyledTableCell align="left">{element.Fondo}</StyledTableCell>
+          <StyledTableRow 
+          rows={rows}
+          
+          >  
+          <StyledTableCell align="center" colSpan={1} >{element.Fondo}</StyledTableCell>
           <StyledTableCell align="left">{element.NumerodeSolicitud}</StyledTableCell>
           <StyledTableCell align="left">{element.FechadeSolicitud}</StyledTableCell>
           <StyledTableCell align="left">{element.Importe}</StyledTableCell> 
