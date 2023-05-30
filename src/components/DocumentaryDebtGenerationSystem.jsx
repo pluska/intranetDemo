@@ -1,7 +1,6 @@
 import React from 'react'
 import Table from './Table'
 import { useSearchParams } from "react-router-dom";
-import Select from 'react-select';
  
 const DocumentaryDebtGenerationSystem = () => {
 
