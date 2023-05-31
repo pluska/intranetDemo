@@ -5,14 +5,11 @@ import { useSearchParams } from "react-router-dom";
 const DocumentaryDebtGenerationSystem = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
-    const perfil = searchParams.get("variable");
-
-    console.log(perfil);
-
     const now = new Date()
     const formatDate = (date) => {
         return date < 10 ? `0${date}` : date
     }
+
     const date = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()} - ${formatDate(now.getHours())}:${formatDate(now.getMinutes())}`
     const [ValueCombo, setValueCombo] = React.useState(false);
  
@@ -189,68 +186,68 @@ const DocumentaryDebtGenerationSystem = () => {
                                 <label>Tipo Operacion:</label>
                                 <select className='date-range-input'>
                                     <option value="0" selected>seleccionar</option>
-                                    <option value="">  GENERICO      </option>
-                                    <option value="">  COMPRA     </option>
-                                    <option value="">  VENTA       </option>
-                                    <option value="">  DEPOSITO   </option>
-                                    <option value="">  COMPRA CONTADO  </option>
-                                    <option value="">  VENTA PLAZO   </option>
-                                    <option value="">  LIQUIDACION ANTICIPADA  </option>
-                                    <option value="">  PRE-PAGO          </option>
+                                    <option value="">  GENERICO  </option>
+                                    <option value="">  COMPRA   </option>
+                                    <option value="">  VENTA    </option>
+                                    <option value="">  DEPOSITO  </option>
+                                    <option value="">  COMPRA CONTADO </option>
+                                    <option value="">  VENTA PLAZO  </option>
+                                    <option value="">  LIQUIDACION ANTICIPADA </option>
+                                    <option value="">  PRE-PAGO     </option>
                                     <option value="">  ACCIONES LIBERADAS   </option>
                                     <option value="">  DIVIDENDOS EFECTIVO   </option>
                                     <option value="">  INTERESES CUPON      </option>
-                                    <option value="1"> REDENCION/VENCIMIENTO   </option>
-                                    <option value="1"> COBRO A CUENTA documentDebGenerationES RF  </option>
-                                    <option value="1">  INTERESES DE AHORROS        </option>
-                                    <option value="1">  RESCATE PARCIAL VALOR CONOCIDO  </option>
-                                    <option value="1">  RESCATE PARCIAL VALOR DESCONOCIDO    </option>
-                                    <option value="1">  RESCATE TOTAL VALOR DESCONOCIDO   </option>
-                                    <option value="1">  RESCATE TOTAL VALOR CONOCIDO     </option>
-                                    <option value="1">  SUSCRIPCION A VALOR CONOCIDO    </option>
-                                    <option value="1">  SUSCRIPCION A VALOR DESCONOCIDO  </option>
-                                    <option value="1">  TRANSFERENCIA PARCIAL CUOTAS    </option>
-                                    <option value="1">  TRANSFERENCIA TOTAL CUOTAS    </option>
-                                    <option value="1">  GENERICO      </option>
-                                    <option value="1">  VARIOS     </option>
-                                    <option value="1">  VARIOS     </option>
-                                    <option value="1">  GENERICO    </option>
-                                    <option value="1">  TRANSFERENCIA (CUENTAS)   </option>
-                                    <option value="1">  GENERICO     </option>
-                                    <option value="1">  VARIOS      </option>
-                                    <option value="1">  VARIOS      </option>
-                                    <option value="1">  GENERICO     </option>
-                                    <option value="1">  CAMBIO VALOR NOMINAL   </option>
-                                    <option value="1">  VARIOS          </option>
-                                    <option value="1">  SUSCRIPCION PREFERENTE-COMPRA  </option>
-                                    <option value="1">  SUSCRIPCION PREFERENTE-VENTA  </option>
-                                    <option value="1">  PAGO COMISIONES DE RESCATES   </option>
-                                    <option value="1">  PAGO COMISIONES DE SUSCRIPCIONES</option>
-                                    <option value="1">  PAGO REMUNERACION A LA ADMINISTRADORA  </option>
-                                    <option value="1">  RESCATE POR GANANCIA VALOR CONOCIDO       </option>
-                                    <option value="1">  RESCATE POR GANANCIA VALOR DESCONOCIDO     </option>
-                                    <option value="1">  FRACCIONAMIENTO DE CERTIFICADOS    </option>
-                                    <option value="1">  CAMBIO DE CERTIFICADOS POR EXTRAVIO/DETERIORO </option>
-                                    <option value="1">  AMORTIZACION              </option>
-                                    <option value="1">  DESMATERIALIZACION-INGRESO  </option>
-                                    <option value="1">  DESMATERIALIZACION-SALIDA   </option>
-                                    <option value="1">  GASTOS OPERATIVOS        </option>
-                                    <option value="1">  CIERRE CUENTAS DE AHORRO   </option>
-                                    <option value="1">  UNIFICACION DE CERTIFICADOS  </option>
-                                    <option value="1">  INTERESES CTAS. CTES.      </option>
-                                    <option value="1">  OPERACIONES DE CAMBIO     </option>
-                                    <option value="1">  PAGO COMISION POR SUPERVISION CONASEV </option>
-                                    <option value="1">  CIERRE SUSCRIPCIONES       </option>
-                                    <option value="1">  ALQUILER BANCO REPUBLICA  </option>
-                                    <option value="1">  INGRESO POR LIQUID. DE FWDS   </option>
-                                    <option value="1">  EGRESO POR LIQUID. DE FWDS   </option>
-                                    <option value="1">  PAGO IMPUESTO RENTA       </option>
-                                    <option value="1">  RETENCIONES DEVENGADAS    </option>
-                                    <option value="1">  OPCIONES - CALL          </option>
-                                    <option value="1">  OPCIONES - PUT            </option>
-                                    <option value="1">  OPCIONES - CALL SPREAD     </option>
-                                    <option value="1">  OPCIONES - PUT SPREAD      </option>
-                                    <option value="1">  PAGO DE BENEFICIOS A PARTÍCIPES    </option>
+                                    <option value=""> REDENCION/VENCIMIENTO   </option>
+                                    <option value=""> COBRO A CUENTA documentDebGenerationES RF  </option>
+                                    <option value=""> INTERESES DE AHORROS        </option>
+                                    <option value=""> RESCATE PARCIAL VALOR CONOCIDO  </option>
+                                    <option value=""> RESCATE PARCIAL VALOR DESCONOCIDO    </option>
+                                    <option value=""> RESCATE TOTAL VALOR DESCONOCIDO   </option>
+                                    <option value=""> RESCATE TOTAL VALOR CONOCIDO     </option>
+                                    <option value=""> SUSCRIPCION A VALOR CONOCIDO    </option>
+                                    <option value=""> SUSCRIPCION A VALOR DESCONOCIDO  </option>
+                                    <option value=""> TRANSFERENCIA PARCIAL CUOTAS    </option>
+                                    <option value=""> TRANSFERENCIA TOTAL CUOTAS    </option>
+                                    <option value=""> GENERICO      </option>
+                                    <option value="1"> VARIOS     </option>
+                                    <option value="1"> VARIOS     </option>
+                                    <option value="1"> GENERICO    </option>
+                                    <option value="1"> TRANSFERENCIA (CUENTAS)   </option>
+                                    <option value="1"> GENERICO     </option>
+                                    <option value="1"> VARIOS      </option>
+                                    <option value="1"> VARIOS      </option>
+                                    <option value="1"> GENERICO     </option>
+                                    <option value="1"> CAMBIO VALOR NOMINAL   </option>
+                                    <option value="1"> VARIOS          </option>
+                                    <option value="1"> SUSCRIPCION PREFERENTE-COMPRA  </option>
+                                    <option value="1"> SUSCRIPCION PREFERENTE-VENTA  </option>
+                                    <option value="1"> PAGO COMISIONES DE RESCATES   </option>
+                                    <option value="1"> PAGO COMISIONES DE SUSCRIPCIONES</option>
+                                    <option value="1"> PAGO REMUNERACION A LA ADMINISTRADORA  </option>
+                                    <option value="1"> RESCATE POR GANANCIA VALOR CONOCIDO       </option>
+                                    <option value="1"> RESCATE POR GANANCIA VALOR DESCONOCIDO     </option>
+                                    <option value="1"> FRACCIONAMIENTO DE CERTIFICADOS    </option>
+                                    <option value="1"> CAMBIO DE CERTIFICADOS POR EXTRAVIO/DETERIORO </option>
+                                    <option value="1"> AMORTIZACION              </option>
+                                    <option value="1"> DESMATERIALIZACION-INGRESO  </option>
+                                    <option value="1"> DESMATERIALIZACION-SALIDA   </option>
+                                    <option value="1"> GASTOS OPERATIVOS        </option>
+                                    <option value="1"> CIERRE CUENTAS DE AHORRO   </option>
+                                    <option value="1"> UNIFICACION DE CERTIFICADOS  </option>
+                                    <option value="1"> INTERESES CTAS. CTES.      </option>
+                                    <option value="1"> OPERACIONES DE CAMBIO     </option>
+                                    <option value="1"> PAGO COMISION POR SUPERVISION CONASEV </option>
+                                    <option value="1"> CIERRE SUSCRIPCIONES       </option>
+                                    <option value="1"> ALQUILER BANCO REPUBLICA  </option>
+                                    <option value="1"> INGRESO POR LIQUID. DE FWDS   </option>
+                                    <option value="1"> EGRESO POR LIQUID. DE FWDS   </option>
+                                    <option value="1"> PAGO IMPUESTO RENTA       </option>
+                                    <option value="1"> RETENCIONES DEVENGADAS    </option>
+                                    <option value="1"> OPCIONES - CALL          </option>
+                                    <option value="1"> OPCIONES - PUT            </option>
+                                    <option value="1"> OPCIONES - CALL SPREAD     </option>
+                                    <option value="1"> OPCIONES - PUT SPREAD      </option>
+                                    <option value="1"> PAGO DE BENEFICIOS A PARTÍCIPES    </option>
                                 </select>
                             </div>
                             <div className='report-filters-group'>

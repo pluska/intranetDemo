@@ -45,7 +45,9 @@ const Layout = ({children}) => {
         {name: 'Persona Jurídica', ref: '/Depsa-Electronic-Charge-Juridical-Person'}
       ]}
       ]}, 
-    {name: 'Registros', ref: '#'},
+    {name: 'Registros', ref: '#',dropdown: [
+      {name: 'Suscripciones', ref: '/Subscriptions-Search-Clients-Funds'} 
+      ]},
     {name: 'Información', ref: '#'},
     {name: 'Sistemas', ref: '#'}, 
     {name: 'Reportes', ref: '#', dropdown: [

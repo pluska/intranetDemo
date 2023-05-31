@@ -16,7 +16,11 @@
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "sass": "^1.62.1",
+<<<<<<< HEAD
+    "sweetalert2": "^11.7.10",
+=======
     "styled-components": "^6.0.0-rc.1",
+>>>>>>> dd80ae66dceb094747f2c9d8fd36ac3c427683ba
     "web-vitals": "^2.1.4"
   },
   "scripts": {
