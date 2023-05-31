@@ -11,3 +11,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.MuiInputLabel-root.Mui-focused {
+  color: #444 !important;
+}
+
+.MuiInput-underline::after {
+  border-bottom: 1px solid #cc2229 !important;
+}
