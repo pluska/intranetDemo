@@ -49,129 +49,134 @@ const DocumentaryDebtGenerationSystem = () => {
     };
 
     return (
-        <> 
-                         
-            <div className='documentDebGeneration-header'>
-                <div className='documentDebGeneration-title'>
+        <>
+            <div className='report-header'>
+                <div className='report-title'>
                     <h1>Generación de reporte de seguimiento de deuda documentaria en sistema</h1>
                 </div>
-                <div className='documentDebGeneration-body'> 
-                    <div className='documentDebGeneration-body-filters'>
-                        <div className='date-range'>
-                            <div className='date-range-container'>
-                                <label htmlFor='date-range-to'>Fecha Inicio:</label>
-                                <input type='date' id='date-range-to' className='date-range-input' />
-                                <label htmlFor='date-range-to'>Fecha Final:</label>
-                                <input type='date' id='date-range-to' className='date-range-input' />
-                                <label>Tipo de Fondos:</label>
-                                <select className='date-range-input'>
-                                    <option value="0" selected>seleccionar</option>
-                                    <option value="">01    SCOTIA FONDO PREMIUM $    </option>
-                                    <option value="">02    SCOTIA FONDO CASH $     </option>
-                                    <option value="">03    SCOTIA FONDO CASH S/.    </option>
-                                    <option value="">04    BWS FONDO RENTA SELECT      </option>
-                                    <option value="">05    SCOTIA FONDO PREMIUM S/.     </option>
-                                    <option value="">08    SCOTIA FONDO ACCIONES       </option>
-                                    <option value="">07    SCOTIA FONDO MIXTO MODERADO   </option>
-                                    <option value="">12    SCOTIA FONDO DEPOSITO DISPONIBLE S/. </option>
-                                    <option value="">11    SCOTIA FONDO DEPOSITO DISPONIBLE $   </option>
-                                    <option value="">09    SCOTIA FONDO MIXTO BALANCEADO S/.   </option>
-                                    <option value="">13    SCOTIA FONDO RENTA LATAM 4 Y      </option>
-                                    <option value="">14    SCOTIA FONDO DE FONDOS ACCIONES EMERGENTES  </option>
-                                    <option value="">15    SCOTIA FONDO DE FONDOS ACCIONES US    </option>
-                                    <option value="">06    SCOTIA FONDO MIXTO BALANCEADO     </option>
-                                    <option value="">16    SCOTIA FONDO RENTA DOLARES 2Y    </option>
-                                    <option value="">17    SCOTIA FONDO RENTA SOLES 5 AÑOS   </option>
-                                    <option value="">18    SCOTIA FONDO RENTA LATAM 4Y II    </option>
-                                    <option value="">19    SCOTIA FONDO RENTA LATAM 6Y      </option>
-                                    <option value="">20    SCOTIA FONDO RENTA SOLES 4.5Y     </option>
-                                    <option value="">21    SCOTIA FONDO RENDIMIENTO BINARIO DOLARES  </option>
-                                    <option value="">22    SCOTIA FONDO RENTA DOLARES 2Y II       </option>
-                                    <option value="">23    SCOTIA FONDO RENDIMIENTO BINARIO SOLES   </option>
-                                    <option value="">24    SCOTIA FONDO RENDIMIENTO BINARIO DOLARES II   </option>
-                                    <option value="">25    SCOTIA FONDO RENDIMIENTO MEJORADO SOLES I      </option>
-                                    <option value="">26    SCOTIA FONDO RENTA DOLARES 2Y III    </option>
-                                    <option value="">27    SF RENTA DOLARES 6M              </option>
-                                    <option value="">28    SF RENDIMIENTO BINARIO DOLARES IV  </option>
-                                    <option value="">29    SF RENDIMIENTO BINARIO SOLES II     </option>
-                                    <option value="">30    SF RENDIMIENTO BINARIO DOLARES III   </option>
-                                    <option value="">31    SF RENDIMIENTO MEJORADO SOLES II    </option>
-                                    <option value="">32    SF RENTA DOLARES 6M II           </option>
-                                    <option value="">33    SCOTIA FONDO DE FONDOS ACCIONES EUROPA     </option>
-                                    <option value="">34    SCOTIA FONDO DE FONDOS DEUDA IG      </option>
-                                    <option value="">35    SCOTIA FONDO DE FONDOS DEUDA HY     </option>
-                                    <option value="">36    SF RENDIMIENTO BINARIO DOLARES V    </option>
-                                    <option value="">37    SF RENDIMIENTO MEJORADO SOLES IV    </option>
-                                    <option value="">38    SF RENDIMIENTO CONDICIONAL SOLES    </option>
-                                    <option value="">39    SF RENDIMIENTO BINARIO DOLARES VII   </option>
-                                    <option value="">40    SF RENTA DOLARES 6M III             </option>
-                                    <option value="">41    SCOTIA FONDO RENTA DOLARES 2Y IV    </option>
-                                    <option value="">42    SF RENDIMIENTO CONDICIONAL SOLES II    </option>
-                                    <option value="">43    SF RENTA DOLARES 1Y             </option>
-                                    <option value="">44    SF RENDIMIENTO ACTIVO DOLARES     </option>
-                                    <option value="">45    SF RENDIMIENTO BINARIO SOLES IV     </option>
-                                    <option value="">46    SF RENTA DOLARES 6M IV           </option>
-                                    <option value="">48    SF RENDIMIENTO BINARIO DOLARES IX      </option>
-                                    <option value="">47    SF RENDIMIENTO MEJORADO SOLES V FMIV      </option>
-                                    <option value="">49    SF RENTA SOLES 1Y                </option>
-                                    <option value="">50    SF RENTA DOLARES 1Y II           </option>
-                                    <option value="">51    SF RENDIMIENTO BINARIO DOLARES VIII     </option>
-                                    <option value="">52    SF RENDIMIENTO MEJORADO SOLES VI      </option>
-                                    <option value="">53    SF INSTITUCIONAL RENTA $ I         </option>
-                                    <option value="">54    SF INSTITUCIONAL RENTA $ II       </option>
-                                    <option value="">55    SF INSTITUCIONAL RENTA $ III     </option>
-                                    <option value="">56    SF RENTA DOLARES 6M V          </option>
-                                    <option value="">57    SF INSTITUCIONAL GLOBAL         </option>
-                                    <option value="">58    SF INSTITUCIONAL RENTA 2Y       </option>
-                                    <option value="">59    SF INSTITUCIONAL RENTA 1Y       </option>
-                                    <option value="">60    SF RENTA DOLARES 1Y III         </option>
-                                    <option value="">62    SF INSTITUCIONAL BINARIO $ I     </option>
-                                    <option value="">63    SF INSTITUCIONAL RENTA 3Y    </option>
-                                    <option value="">64    SCOTIA FONDO DE FONDOS DISTRIBUTIVO IG   </option>
-                                    <option value="">65    SCOTIA FONDO DE FONDOS DISTRIBUTIVO HY  </option>
-                                    <option value="">66    SF NOTA ESTRUCTURADA I         </option>
-                                    <option value="">67    SF RENTA DOLARES 6M VI        </option>
-                                    <option value="">68    SF INSTITUCIONAL RENTA 1Y II   </option>
-                                    <option value="">69    SF RENTA DOLARES 6M VII       </option>
-                                    <option value="">61    SF RENDIMIENTO BINARIO SOLES VII     </option>
-                                    <option value="">70    SCOTIA FONDO DE FONDOS DISTRIBUTIVO HY II   </option>
-                                    <option value="">71    SF NOTA ESTRUCTURADA II              </option>
-                                    <option value="">72    SF INSTITUCIONAL RENTA 1YIII     </option>
-                                    <option value="">74    SF RENTA DOLARES 6M IX        </option>
-                                    <option value="">75    SCOTIA FONDO DE FONDOS IGUALDAD DE GENERO </option>
-                                    <option value="">76    SF RENTA DOLARES 6M X            </option>
-                                    <option value="">77    SCOTIA FONDO DE FONDOS CORTO PLAZO INTERNACIONAL   </option>
-                                    <option value="">78    SF INSTITUCIONAL RENTA 1Y IV               </option>
-                                    <option value="">73    SF RENTA DOLARES 6M VIII      </option>
-                                    <option value="">79    SF NOTA ESTRUCTURADA IV       </option>
-                                    <option value="">80    SF RENTA DOLARES 6M XI        </option>
-                                    <option value="">81    SF RENTA SOLES 1Y IV           </option>
-                                    <option value="">82    SF RENTA DOLARES 6M XII        </option>
-                                    <option value="">83    SF NOTA ESTRUCTURADA V                </option>
-                                    <option value="">85    SF RENDIMIENTO BINARIO SOLES IX    </option>
-                                    <option value="">87    SF INSTITUCIONAL DE RENTA $ VII    </option>
-                                    <option value="">88    SF RENDIMIENTO BINARIO SOLES X    </option>
-                                    <option value="">89    SF INSTITUCIONAL DE RENTA $ VI    </option>
-                                    <option value="">84    SF INSTITUCIONAL DE RENTA $ V    </option>
-                                    <option value="">86    SF RENTA SOLES 6M             </option>
-                                    <option value="">90    SF RENDIMIENTO BINARIO DOLARES XI    </option>
-                                    <option value="">91    SF RENTA DOLARES  6M XIII    </option>
-                                    <option value="">92    SF RENTA DOLARES 6M XIV      </option>
-                                    <option value="">93    SF RENTA DOLARES 3M        </option>
-                                    <option value="">94    SF RENTA DOLARES 1Y IV      </option>
-                                    <option value="">95    SCOTIA FONDO LIQUIDEZ SOLES    </option>
-                                    <option value="">96    SF INSTITUCIONAL DE RENTA $ VIII    </option>
-                                    <option value="">97    SF INSTITUCIONAL RENTA 1Y V        </option>
-                                    <option value="">98    SCOTIA FONDO LIQUIDEZ  $      </option>
-                                    <option value="">99    SF RENTA SOLES 6M II        </option>
-                                    <option value="">A0    SF RENTA DOLARES 6M XV      </option>
-                                    <option value="">A1    SF RENTA DOLARES 6M XVI      </option>
-                                    <option value="">A2    SF RENTA DOLARES 1Y V       </option>
-                                    <option value="">A3    SF INSTITUCIONAL DE RENTA $  IX   </option>
-                                    <option value="">A4    SF INSTITUCIONAL DE RENTA $  X    </option>
-                                </select>
+                <div className='report-body'>
+                    <div className='report-body-filters'>
+                            <div className='report-filters-container'>
+                                <div className='report-filters-group'>
+                                    <label htmlFor='date-range-to'>Fecha Inicio:</label>
+                                    <input type='date' id='date-range-to' className='filters-date-range-input' />
+                                </div>
+                                <div className='report-filters-group'>
+                                    <label htmlFor='date-range-to'>Fecha Final:</label>
+                                    <input type='date' id='date-range-to' className='filters-date-range-input' />
+                                </div>
+                                <div className='report-filters-group'>
+                                    <label>Tipo de Fondos:</label>
+                                    <select className='report-filters-select'>
+                                        <option value="0" selected>seleccionar</option>
+                                        <option value="">01    SCOTIA FONDO PREMIUM $    </option>
+                                        <option value="">02    SCOTIA FONDO CASH $     </option>
+                                        <option value="">03    SCOTIA FONDO CASH S/.    </option>
+                                        <option value="">04    BWS FONDO RENTA SELECT      </option>
+                                        <option value="">05    SCOTIA FONDO PREMIUM S/.     </option>
+                                        <option value="">08    SCOTIA FONDO ACCIONES       </option>
+                                        <option value="">07    SCOTIA FONDO MIXTO MODERADO   </option>
+                                        <option value="">12    SCOTIA FONDO DEPOSITO DISPONIBLE S/. </option>
+                                        <option value="">11    SCOTIA FONDO DEPOSITO DISPONIBLE $   </option>
+                                        <option value="">09    SCOTIA FONDO MIXTO BALANCEADO S/.   </option>
+                                        <option value="">13    SCOTIA FONDO RENTA LATAM 4 Y      </option>
+                                        <option value="">14    SCOTIA FONDO DE FONDOS ACCIONES EMERGENTES  </option>
+                                        <option value="">15    SCOTIA FONDO DE FONDOS ACCIONES US    </option>
+                                        <option value="">06    SCOTIA FONDO MIXTO BALANCEADO     </option>
+                                        <option value="">16    SCOTIA FONDO RENTA DOLARES 2Y    </option>
+                                        <option value="">17    SCOTIA FONDO RENTA SOLES 5 AÑOS   </option>
+                                        <option value="">18    SCOTIA FONDO RENTA LATAM 4Y II    </option>
+                                        <option value="">19    SCOTIA FONDO RENTA LATAM 6Y      </option>
+                                        <option value="">20    SCOTIA FONDO RENTA SOLES 4.5Y     </option>
+                                        <option value="">21    SCOTIA FONDO RENDIMIENTO BINARIO DOLARES  </option>
+                                        <option value="">22    SCOTIA FONDO RENTA DOLARES 2Y II       </option>
+                                        <option value="">23    SCOTIA FONDO RENDIMIENTO BINARIO SOLES   </option>
+                                        <option value="">24    SCOTIA FONDO RENDIMIENTO BINARIO DOLARES II   </option>
+                                        <option value="">25    SCOTIA FONDO RENDIMIENTO MEJORADO SOLES I      </option>
+                                        <option value="">26    SCOTIA FONDO RENTA DOLARES 2Y III    </option>
+                                        <option value="">27    SF RENTA DOLARES 6M              </option>
+                                        <option value="">28    SF RENDIMIENTO BINARIO DOLARES IV  </option>
+                                        <option value="">29    SF RENDIMIENTO BINARIO SOLES II     </option>
+                                        <option value="">30    SF RENDIMIENTO BINARIO DOLARES III   </option>
+                                        <option value="">31    SF RENDIMIENTO MEJORADO SOLES II    </option>
+                                        <option value="">32    SF RENTA DOLARES 6M II           </option>
+                                        <option value="">33    SCOTIA FONDO DE FONDOS ACCIONES EUROPA     </option>
+                                        <option value="">34    SCOTIA FONDO DE FONDOS DEUDA IG      </option>
+                                        <option value="">35    SCOTIA FONDO DE FONDOS DEUDA HY     </option>
+                                        <option value="">36    SF RENDIMIENTO BINARIO DOLARES V    </option>
+                                        <option value="">37    SF RENDIMIENTO MEJORADO SOLES IV    </option>
+                                        <option value="">38    SF RENDIMIENTO CONDICIONAL SOLES    </option>
+                                        <option value="">39    SF RENDIMIENTO BINARIO DOLARES VII   </option>
+                                        <option value="">40    SF RENTA DOLARES 6M III             </option>
+                                        <option value="">41    SCOTIA FONDO RENTA DOLARES 2Y IV    </option>
+                                        <option value="">42    SF RENDIMIENTO CONDICIONAL SOLES II    </option>
+                                        <option value="">43    SF RENTA DOLARES 1Y             </option>
+                                        <option value="">44    SF RENDIMIENTO ACTIVO DOLARES     </option>
+                                        <option value="">45    SF RENDIMIENTO BINARIO SOLES IV     </option>
+                                        <option value="">46    SF RENTA DOLARES 6M IV           </option>
+                                        <option value="">48    SF RENDIMIENTO BINARIO DOLARES IX      </option>
+                                        <option value="">47    SF RENDIMIENTO MEJORADO SOLES V FMIV      </option>
+                                        <option value="">49    SF RENTA SOLES 1Y                </option>
+                                        <option value="">50    SF RENTA DOLARES 1Y II           </option>
+                                        <option value="">51    SF RENDIMIENTO BINARIO DOLARES VIII     </option>
+                                        <option value="">52    SF RENDIMIENTO MEJORADO SOLES VI      </option>
+                                        <option value="">53    SF INSTITUCIONAL RENTA $ I         </option>
+                                        <option value="">54    SF INSTITUCIONAL RENTA $ II       </option>
+                                        <option value="">55    SF INSTITUCIONAL RENTA $ III     </option>
+                                        <option value="">56    SF RENTA DOLARES 6M V          </option>
+                                        <option value="">57    SF INSTITUCIONAL GLOBAL         </option>
+                                        <option value="">58    SF INSTITUCIONAL RENTA 2Y       </option>
+                                        <option value="">59    SF INSTITUCIONAL RENTA 1Y       </option>
+                                        <option value="">60    SF RENTA DOLARES 1Y III         </option>
+                                        <option value="">62    SF INSTITUCIONAL BINARIO $ I     </option>
+                                        <option value="">63    SF INSTITUCIONAL RENTA 3Y    </option>
+                                        <option value="">64    SCOTIA FONDO DE FONDOS DISTRIBUTIVO IG   </option>
+                                        <option value="">65    SCOTIA FONDO DE FONDOS DISTRIBUTIVO HY  </option>
+                                        <option value="">66    SF NOTA ESTRUCTURADA I         </option>
+                                        <option value="">67    SF RENTA DOLARES 6M VI        </option>
+                                        <option value="">68    SF INSTITUCIONAL RENTA 1Y II   </option>
+                                        <option value="">69    SF RENTA DOLARES 6M VII       </option>
+                                        <option value="">61    SF RENDIMIENTO BINARIO SOLES VII     </option>
+                                        <option value="">70    SCOTIA FONDO DE FONDOS DISTRIBUTIVO HY II   </option>
+                                        <option value="">71    SF NOTA ESTRUCTURADA II              </option>
+                                        <option value="">72    SF INSTITUCIONAL RENTA 1YIII     </option>
+                                        <option value="">74    SF RENTA DOLARES 6M IX        </option>
+                                        <option value="">75    SCOTIA FONDO DE FONDOS IGUALDAD DE GENERO </option>
+                                        <option value="">76    SF RENTA DOLARES 6M X            </option>
+                                        <option value="">77    SCOTIA FONDO DE FONDOS CORTO PLAZO INTERNACIONAL   </option>
+                                        <option value="">78    SF INSTITUCIONAL RENTA 1Y IV               </option>
+                                        <option value="">73    SF RENTA DOLARES 6M VIII      </option>
+                                        <option value="">79    SF NOTA ESTRUCTURADA IV       </option>
+                                        <option value="">80    SF RENTA DOLARES 6M XI        </option>
+                                        <option value="">81    SF RENTA SOLES 1Y IV           </option>
+                                        <option value="">82    SF RENTA DOLARES 6M XII        </option>
+                                        <option value="">83    SF NOTA ESTRUCTURADA V                </option>
+                                        <option value="">85    SF RENDIMIENTO BINARIO SOLES IX    </option>
+                                        <option value="">87    SF INSTITUCIONAL DE RENTA $ VII    </option>
+                                        <option value="">88    SF RENDIMIENTO BINARIO SOLES X    </option>
+                                        <option value="">89    SF INSTITUCIONAL DE RENTA $ VI    </option>
+                                        <option value="">84    SF INSTITUCIONAL DE RENTA $ V    </option>
+                                        <option value="">86    SF RENTA SOLES 6M             </option>
+                                        <option value="">90    SF RENDIMIENTO BINARIO DOLARES XI    </option>
+                                        <option value="">91    SF RENTA DOLARES  6M XIII    </option>
+                                        <option value="">92    SF RENTA DOLARES 6M XIV      </option>
+                                        <option value="">93    SF RENTA DOLARES 3M        </option>
+                                        <option value="">94    SF RENTA DOLARES 1Y IV      </option>
+                                        <option value="">95    SCOTIA FONDO LIQUIDEZ SOLES    </option>
+                                        <option value="">96    SF INSTITUCIONAL DE RENTA $ VIII    </option>
+                                        <option value="">97    SF INSTITUCIONAL RENTA 1Y V        </option>
+                                        <option value="">98    SCOTIA FONDO LIQUIDEZ  $      </option>
+                                        <option value="">99    SF RENTA SOLES 6M II        </option>
+                                        <option value="">A0    SF RENTA DOLARES 6M XV      </option>
+                                        <option value="">A1    SF RENTA DOLARES 6M XVI      </option>
+                                        <option value="">A2    SF RENTA DOLARES 1Y V       </option>
+                                        <option value="">A3    SF INSTITUCIONAL DE RENTA $  IX   </option>
+                                        <option value="">A4    SF INSTITUCIONAL DE RENTA $  X    </option>
+                                    </select>
+                                </div>
                             </div>
-                            <div className='date-range-container'>
+                            <div className='report-filters-container'>
+                            <div className='report-filters-group'>
                                 <label>Tipo:</label>
                                 <select className='date-range-input'>
                                     <option value="0" selected>seleccionar</option>
@@ -179,14 +184,8 @@ const DocumentaryDebtGenerationSystem = () => {
                                     <option value="2">Pendiente</option>
                                     <option value="3">Observado</option>
                                 </select>
-                      
-                              {/* <Select
-                                    style={{background: '#cc2229', color: '#cc2229', padding: '1rem' }}
-                                    isMulti
-                                    options={options}
-                                    onChange={userIdHandler}
-                                />  */}
-
+                            </div>
+                            <div className='report-filters-group'>
                                 <label>Tipo Operacion:</label>
                                 <select className='date-range-input'>
                                     <option value="0" selected>seleccionar</option>
@@ -253,35 +252,34 @@ const DocumentaryDebtGenerationSystem = () => {
                                     <option value="1">  OPCIONES - PUT SPREAD      </option>
                                     <option value="1">  PAGO DE BENEFICIOS A PARTÍCIPES    </option>
                                 </select>
+                            </div>
+                            <div className='report-filters-group'>
                                 <label htmlFor='date-range-to'>CDR:</label>
                                 <input type='text' id='date-range-to' className='date-range-input' />
                             </div>
-
-                            <div className='date-range-container'>
-                                <label htmlFor='date-range-to'>Funcionario Negocio:</label>
-                                <select className='date-range-input'>
-                                    <option value="0" selected>seleccionar</option>
-                                    <option value="1">Funcionario</option> 
-                                </select>       
-                                <label></label>
-                                <label></label>
-                                <label></label> 
-                                <label></label>
-                            </div>
                         </div>
+
+
+                            <div className='report-filters-container'>
+                                <div className='report-filters-group'>
+                                    <label htmlFor='date-range-to'>Funcionario Negocio:</label>
+                                    <select className='date-range-input'>
+                                        <option value="0" selected>seleccionar</option>
+                                        <option value="1">Funcionario</option>
+                                    </select>
+                                </div>
+                            </div>
                     </div>
-                    <div className='documentDebGeneration-body-btns'>
+                    <div className='report-body-btns'>
                         <button className='btn btn-primary'>Consultar</button>
-                        <button className='btn btn-primary'>Exportar Excel</button>
-                        <button className='btn btn-primary'>Salir</button>
+                        <button className='btn btn-default'>Exportar Excel</button>
+                        <button className='btn btn-default'>Salir</button>
                     </div>
                 </div>
             </div>
- 
-          <div className='documentDebGeneration-table'>
-          <Table data={tableData} />
-          </div> 
-          
+            <div className='report-table'>
+                <Table data={tableData} />
+            </div>
         </>
     )
 }

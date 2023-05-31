@@ -2,40 +2,43 @@
   padding: 20px 10px;
   text-align: center;
   h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-  }
-  h2 {
     font-size: 1.5rem;
     margin-bottom: 20px;
   }
-  h3 {
+  h2 {
     font-size: 1.2rem;
     margin-bottom: 20px;
   }
-  h4 {
+  h3 {
     font-size: 1rem;
     margin-bottom: 20px;
   }
+  h4 {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+  }
   p {
-    font-size: 1.2rem;
+    font-size: 0.5rem;
   }
   .btn {
-    margin: 1em;
+    width: 100%;
+    margin: 0.1em;
     padding: 0.5em 1em;
     border-radius: 5px;
     border: 1px solid transparent;
-    font-size: 1.2rem;
+    font-size: 0.875rem;
     cursor: pointer;
     color: $color-text;
   }
   .btn-primary {
-    background-color: $primary-color;
-    border-color: $primary-color;
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    color: $primary-color;
   }
   .btn-primary:hover {
-    background-color: $primary-color-hover;
-    border-color: $primary-color-hover;
+    background-color: $secondary-color-hover;
+    border-color: $secondary-color-hover;
+    color: $primary-color-hover;
   }
   .btn-secondary {
     background-color: $secondary-color;
@@ -44,5 +47,15 @@
   .btn-secondary:hover {
     background-color: $secondary-color-hover;
     border-color: $secondary-color-hover;
+  }
+  .btn-default {
+    background-color: $color-text;
+    border-color: $color-muted;
+    color: $color-black;
+    &:hover {
+      background-color: $color-muted;
+      border-color: $color-muted;
+      color: $color-text;
+    }
   }
 }
