@@ -8,12 +8,9 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import BorderColorSharpIcon from '@material-ui/icons/BorderColorSharp';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
 import TablePagination from '@material-ui/core/TablePagination';
-import { CheckBox, CheckBoxSharp, RadioButtonUnchecked } from '@material-ui/icons';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -21,7 +18,6 @@ import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import Select from '@material-ui/core/Select';
 
 
@@ -66,7 +62,6 @@ const DepsaElectronicChargeJuridicalPerson = ({ options }) => {
 
 
   const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
-  // const [value, setValue] = React.useState<Dayjs | null>(dayjs('2022-04-17'));
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -74,12 +69,6 @@ const DepsaElectronicChargeJuridicalPerson = ({ options }) => {
   function createData(name, calories, fat, carbs) {
     return { name, calories, fat, carbs };
   }
-  //   const setListUser = [
-  //     ['s','9069555','SFP $','263080','ejemplo JIMENZ TODE   ROBERTO IGNACIO','U$ 1600','10/04/2023','99655','',''],
-  //     ['s','9065525','SFP $','263050','ejemplo JIMENZ TODE   ROBERTO IGNACIO','U$ 1600','10/04/2023','99655','',''],
-  //     ['s','9069999','SFP S./','266680','ejemplo JIMENZ TODE   ROBERTO IGNACIO','U$ 1600','10/04/2023','99655','','']
-  //  ];
-
 
   const setListUser = [
     {
@@ -131,53 +120,42 @@ const DepsaElectronicChargeJuridicalPerson = ({ options }) => {
 
 
   return (
-    <div style={{ marginRight: 50, backgroundColor: '#FFFFFF' }}>
+    <div style={{backgroundColor: '#FFFFFF', padding:"0 50px" }}>
       <center>
         <Grid container style={{ marginTop: 20 }}>
           <Grid item xs={12} style={{ borderTop: 5, borderBottomWidth: 2, borderBottomColor: '#FF0000', }}>
-            <h1 style={{ margin: 1, fontSize: '15pt', color: '#FF0000' }}>Cargo Electrónico de Documentos para enviar a Depsa  Persona Jurídica</h1>
+            <h1 style={{ margin: 1, fontSize: '15pt', color: '#FF0000' }}>Cargo Electrónico de Documentos para enviar a DEPSA  Persona Jurídica</h1>
           </Grid>
         </Grid>
       </center>
 
-      <Grid container style={{ marginTop: 10, marginBottom: 10 }}>
-        <Grid item xs={1} >
-        </Grid>
 
-        <Grid item xs={3} style={{ paddingTop: 10, textAlign: 'left' }} >
-          <TextField id="standard-basic" label="CDR" variant="standard" />
-          <div>Documentos:</div>
-          <a style={{ fontSize: 18 }}>Desde:</a>
-          <TextField
-            id="date"
-            type="date"
-            defaultValue="2023-05-23"
-            className={classes.textField}
-            InputLabelProps={{
-              shrink: true,
-            }}
-          />
-        </Grid>
+      <Grid container spacing={2} style={{ marginTop: 20 }} >
+        <Grid item xs={10}>
 
-        <Grid item xs={6} style={{ paddingTop: 10, textAlign: 'left' }} >
-          <TextField id="standard-basic" label="Oficina" variant="standard" style={{ width: '80%' }} />
-          <div style={{ display: 'flex', width: '100%' }} >
-            <RadioGroup
-              aria-labelledby="demo-radio-buttons-group-label"
-              defaultValue="female"
-              name="radio-buttons-group"
-              style={{ flexDirection: 'row' }}
-            >
-              <FormControlLabel value="female" control={<Radio />} label="de Operaciones" />
-              <FormControlLabel value="male" control={<Radio />} label="Actualizados por Usuario" />
-            </RadioGroup>
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
-
-            <div style={{ display: 'flex', width: '100%', justifyContent: 'space-evenly' }}>
-              <a style={{ fontSize: 18 }}>Hasta:</a>
-
-              <TextField
+          <Grid container spacing={2} style={{ textAlign: "left" }} >
+            <Grid item xs={4}>
+              <TextField id="standard-basic" label="CDR" variant="standard" />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField id="standard-basic" label="Oficina" variant="standard" style={{ width: '80%' }} />
+            </Grid>
+            <Grid item xs={4}>
+              Documentos:
+            </Grid>
+            <Grid item xs={8}>
+              <RadioGroup
+                aria-labelledby="demo-radio-buttons-group-label"
+                defaultValue="female"
+                name="radio-buttons-group"
+                style={{ flexDirection: 'row' }}
+              >
+                <FormControlLabel value="female" control={<Radio />} label="de Operaciones" />
+                <FormControlLabel value="male" control={<Radio />} label="Actualizados por Usuario" />
+              </RadioGroup>
+            </Grid>
+            <Grid item xs={4}>
+              Desde:  <TextField
                 id="date"
                 type="date"
                 defaultValue="2023-05-23"
@@ -186,31 +164,48 @@ const DepsaElectronicChargeJuridicalPerson = ({ options }) => {
                   shrink: true,
                 }}
               />
+            </Grid>
+            <Grid item xs={8}>
+              <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
+                
+                <div>
+                Hasta: <TextField
+                  id="date"
+                  type="date"
+                  defaultValue="2023-05-23"
+                  className={classes.textField}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                />
+                </div>
 
-              <InputLabel id="demo-simple-select-label">Tipo Doc.</InputLabel>
-              <Select
-                value={age2}
-                labelId="demo-simple-select-outlined-label2"
-                id="demo-simple-select-outlined2"
-                // onChange={handleChangeCombo}
-                label="Seleccionar"
-                style={{ width: 120 }}
-              >
-                <MenuItem value={'1'} key={1}>{'Todos'}</MenuItem>
-                <MenuItem value={'2'} key={2}>{'Suscripciones'}</MenuItem>
-                <MenuItem value={'3'} key={3}>{'Rescates'}</MenuItem>
-                <MenuItem value={'4'} key={4}>{'Afiliaciones Virtuales'}</MenuItem>
-                <MenuItem value={'5'} key={5}>{'Actualizacion de Datos'}</MenuItem>
-                <MenuItem value={'6'} key={6}>{'DJ Fuera de Perfil'}</MenuItem>
-              </Select>
+                <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
+                  <InputLabel id="demo-simple-select-label">Tipo Doc.</InputLabel>
+                  <Select
+                    value={age2}
+                    labelId="demo-simple-select-outlined-label2"
+                    id="demo-simple-select-outlined2"
+                    // onChange={handleChangeCombo}
+                    label="Seleccionar"
+                    style={{ width: 200 }}
+                  >
+                    <MenuItem value={'1'} key={1}>{'Todos'}</MenuItem>
+                    <MenuItem value={'2'} key={2}>{'Suscripciones'}</MenuItem>
+                    <MenuItem value={'3'} key={3}>{'Rescates'}</MenuItem>
+                    <MenuItem value={'4'} key={4}>{'Afiliaciones Virtuales'}</MenuItem>
+                    <MenuItem value={'5'} key={5}>{'Actualizacion de Datos'}</MenuItem>
+                    <MenuItem value={'6'} key={6}>{'DJ Fuera de Perfil'}</MenuItem>
+                  </Select>
+                </FormControl>
 
+                <TextField id="standard-basic" label="Total de Operaciones" variant="standard" />
+              </div>
+            </Grid>
+          </Grid>
 
-              <TextField id="standard-basic" label="Total de Operaciones" variant="standard" />
-            </div>
-          </div>
         </Grid>
-
-        <Grid item xs={2} style={{ paddingTop: 10, textAlign: 'left' }} >
+        <Grid item xs={2}>
           <div style={{ display: 'flex', flexDirection: 'column', }} >
             <Button variant="contained" style={{ backgroundColor: '#cc222842', color: '#cc2229', textTransform: 'none', width: '100%', marginLeft: 10, marginBottom: 5 }}  >
               Buscar
@@ -222,37 +217,35 @@ const DepsaElectronicChargeJuridicalPerson = ({ options }) => {
               Salir
             </Button>
           </div>
-
         </Grid>
+
       </Grid>
 
 
       <div>
-        <Grid container >
-          <Grid item xs={1} >
-          </Grid>
-          <Grid item xs={10} >
+        <Grid container spacing={2} >
+          <Grid item xs={12} >
             <TableContainer component={Paper}></TableContainer>
 
             <Table className={classes.table} aria-label="customized table">
               <TableHead>
                 <TableRow>
                   <StyledTableCell>T</StyledTableCell>
-                  <StyledTableCell align="left">Nro.Solki</StyledTableCell>
+                  <StyledTableCell align="left">Nro.Soli</StyledTableCell>
                   <StyledTableCell align="left">Fondo</StyledTableCell>
-                  <StyledTableCell align="left">Cod.Part</StyledTableCell>
+                  <StyledTableCell align="left">Cod.Part.</StyledTableCell>
                   <StyledTableCell align="left">Participe</StyledTableCell>
                   <StyledTableCell align="left">Importe</StyledTableCell>
                   <StyledTableCell align="left">Fch.Soli.</StyledTableCell>
                   <StyledTableCell align="left">Prom.</StyledTableCell>
                   <StyledTableCell align="left">Bol.</StyledTableCell>
                   <StyledTableCell align="left">Cont</StyledTableCell>
-                  <StyledTableCell align="left">Dni</StyledTableCell>
-                  <StyledTableCell align="left">Dof</StyledTableCell>
-                  <StyledTableCell align="left">Fir</StyledTableCell>
+                  <StyledTableCell align="left">DNI</StyledTableCell>
+                  <StyledTableCell align="left">DOF</StyledTableCell>
+                  <StyledTableCell align="left">Fir.</StyledTableCell>
                   <StyledTableCell align="left">Ren.</StyledTableCell>
-                  <StyledTableCell align="left">2 Doc</StyledTableCell>
-                  <StyledTableCell align="left">Djur.</StyledTableCell>
+                  <StyledTableCell align="left">2°Doc</StyledTableCell>
+                  <StyledTableCell align="left">DJur.</StyledTableCell>
                   <StyledTableCell align="left">Canal</StyledTableCell>
                 </TableRow>
               </TableHead>
@@ -336,63 +329,51 @@ const DepsaElectronicChargeJuridicalPerson = ({ options }) => {
             // onChangeRowsPerPage={handleChangeRowsPerPage}
             />
           </Grid>
-          <Grid item xs={1} >
-          </Grid>
         </Grid>
 
+      </div>
 
+      <Grid container spacing={2} >
+          <Grid item xs={10}>
 
-        <div style={{ paddingBottom: 10 }}>
-          <Grid container style={{ marginTop: 10 }}>
-            <Grid item xs={1} >
+          <Grid container spacing={2} style={{ textAlign: "left" }} >
+          <Grid item xs={4}>
+              Bol.: Boleta
             </Grid>
-            <Grid item xs={1} style={{ paddingTop: 10, textAlign: 'left' }} >
-              <a style={{ fontSize: 18 }}>Bol.:Boleta</a>
+            <Grid item xs={4}>
+              Cont.: Contrato
             </Grid>
-            <Grid item xs={2} style={{ paddingTop: 10, textAlign: 'left' }} >
-              <a style={{ fontSize: 18 }}>Cont.:Contrato</a>
+            <Grid item xs={4}>
+              DJur.: Declaracion Jurada
             </Grid>
-            <Grid item xs={2} style={{ paddingTop: 10, textAlign: 'left' }} >
-              <a style={{ fontSize: 18 }}>D Jur:Declaracion Jurada</a>
+            <Grid item xs={4}>
+              Ren.:Reniec
             </Grid>
-          </Grid>
-        </div>
-
-        <div style={{ paddingBottom: 10 }}>
-          <Grid container style={{ marginTop: 10 }}>
-            <Grid item xs={1} >
+            <Grid item xs={4}>
+              2° Doc.: 2° Documento para Extranjeros
             </Grid>
-            <Grid item xs={1} style={{ paddingTop: 10, textAlign: 'left' }} >
-              <a style={{ fontSize: 18 }}>Ren.:Reniec</a>
-            </Grid>
-            <Grid item xs={2} style={{ paddingTop: 10, textAlign: 'left' }} >
-              <a style={{ fontSize: 18 }}>2 Doc.:2 Documento para Extranjeros</a>
-            </Grid>
-            <Grid item xs={2} style={{ paddingTop: 10, textAlign: 'left' }} >
+            <Grid item xs={4}>
               <TextField
                 className='ng-pristine ng-valid ng-touched'
                 type="checkbox"
               />
-              <a style={{ fontSize: 18 }}>:Doc.obligatorio</a>
+              :Doc.obligatorio
+            </Grid>
+            <Grid item xs={4}>
+              Fir.: Firma
+            </Grid>
+            <Grid item xs={4}>
+              DOF:Declaracion Origen de Fondos
             </Grid>
           </Grid>
-        </div>
-
-        <div style={{ paddingBottom: 10 }}>
-          <Grid container style={{ marginTop: 10 }}>
-            <Grid item xs={1} >
-            </Grid>
-            <Grid item xs={1} style={{ paddingTop: 10, textAlign: 'left' }} >
-              <a style={{ fontSize: 18 }}>Fir.:Firma</a>
-            </Grid>
-            <Grid item xs={2} style={{ paddingTop: 10, textAlign: 'left' }} >
-              <a style={{ fontSize: 18 }}>DOF:Declaracion Origen de Fondos</a>
-            </Grid>
+            
           </Grid>
-        </div>
-
-
-      </div>
+          <Grid item xs={2}>
+            <Button variant="outlined" style={{ backgroundColor: '#fff', color: '#000', textTransform: 'none', width: '100%', marginLeft: 10, marginBottom: 5 }}  >
+              Grabar cambios
+            </Button>
+          </Grid>
+        </Grid>
     </div>
   )
 }
