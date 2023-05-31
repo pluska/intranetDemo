@@ -41,7 +41,9 @@ const Layout = ({children}) => {
     {name: 'Consultas', ref: '#' ,dropdown: [
       {name: 'Documentacion Pendiente', ref: '/Documentation-Pending-Delivery'} 
       ]}, 
-    {name: 'Registros', ref: '#'},
+    {name: 'Registros', ref: '#',dropdown: [
+      {name: 'Suscripciones', ref: '/Subscriptions-Search-Clients-Funds'} 
+      ]},
     {name: 'Información', ref: '#'},
     {name: 'Sistemas', ref: '#'}, 
     {name: 'Reportes', ref: '#', dropdown: [

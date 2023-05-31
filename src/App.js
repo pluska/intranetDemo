@@ -4,17 +4,16 @@ import './styles/App.scss';
  
 import DocumentaryDebtGenerationSystem from './components/DocumentaryDebtGenerationSystem';
 import DocumentationPendingDelivery from './components/DocumentationPendingDelivery';
+import SubscriptionsSearchClientsFunds from './components/SubscriptionsSearchClientsFunds';
 
 function App() {
   return (
     <BrowserRouter>
     <Layout>
-    <Routes>
-    
+    <Routes> 
      <Route path="/Documentary-Deb-Generation-System" element={<DocumentaryDebtGenerationSystem />} />
      <Route path="/Documentation-Pending-Delivery" element={<DocumentationPendingDelivery />} />
-  
-  
+     <Route path="/Subscriptions-Search-Clients-Funds" element={<SubscriptionsSearchClientsFunds />} />
     </Routes>
     </Layout>
     </BrowserRouter>
