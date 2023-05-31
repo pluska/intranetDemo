@@ -28,9 +28,9 @@
           border-top: 1px solid #dee2e6;
           text-align: left;
           color: #fff;
-          background-color: #CF0606
+          background-color: $color-gray;
           ;
-          border-color: #CF0606;
+          border-color: $color-gray;
           &:first-child {
             border-top-left-radius: 0.25rem;
           }

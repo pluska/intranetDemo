@@ -39,7 +39,11 @@ const Layout = ({children}) => {
   }
   const options = ([
     {name: 'Consultas', ref: '#' ,dropdown: [
-      {name: 'Documentacion Pendiente', ref: '/Documentation-Pending-Delivery'} 
+      {name: 'Documentacion Pendiente', ref: '/Documentation-Pending-Delivery'},
+      {name: 'Cargo Electrónico a Depsa', ref: '#', dropdown: [
+        {name: 'Persona Natural', ref: '/Depsa-Electronic-Charge-Natural-Person'},
+        {name: 'Persona Jurídica', ref: '/Depsa-Electronic-Charge-Juridical-Person'}
+      ]}
       ]}, 
     {name: 'Registros', ref: '#',dropdown: [
       {name: 'Suscripciones', ref: '/Subscriptions-Search-Clients-Funds'} 

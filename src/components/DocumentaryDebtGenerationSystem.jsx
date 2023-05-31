@@ -1,11 +1,15 @@
 import React from 'react'
 import Table from './Table'
 import { useSearchParams } from "react-router-dom";
+<<<<<<< HEAD
 import Select from 'react-select';
 import Button from '@material-ui/core/Button';
 import { Grid } from '@material-ui/core';
 
 
+=======
+ 
+>>>>>>> dd80ae66dceb094747f2c9d8fd36ac3c427683ba
 const DocumentaryDebtGenerationSystem = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
