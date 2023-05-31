@@ -14,7 +14,7 @@ import TablePagination from '@material-ui/core/TablePagination';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
-      backgroundColor: '#cc2229',
+      backgroundColor: '#444',
       color: theme.palette.common.white,
     },
     body: {
@@ -47,9 +47,7 @@ const StyledTableCell = withStyles((theme) => ({
  
 const DocumentationPendingDelivery = () => { 
 
-    const rows = [
-        createData('1', 'Edwin', '561615616', 'Activo'),
-      ]; 
+     
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(6); 
     const classes = useStyles(); 
@@ -61,38 +59,13 @@ const DocumentationPendingDelivery = () => {
 
     const date = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear()} - ${formatDate(now.getHours())}:${formatDate(now.getMinutes())}`
     const [ValueCombo, setValueCombo] = React.useState(false); 
-    
-    
-    // const tableData = {
-    //     th: [
-    //         { name: 'FONDO', className: 'date' },
-    //         { name: 'NUMERO DE SOLICITUD', className: 'fund' },
-    //         { name: 'FECHA DE SOLICITUD', className: 'bank-account' },
-    //         { name: 'IMPORTE', className: 'currency' },
-    //         { name: 'CODIGO PARTICIPE', className: 'account-number' },
-    //         { name: 'NOMBRE DEL PARTICIPE', className: 'module-balance' },
-    //         { name: 'FUNCIONARIO QUE ATENDIO LA SOLICIRTUD', className: 'bt-balance' },
-    //         { name: 'DOCUMETOS QUE ADEUDA', className: 'difference' },
-    //     ],
-    //     data: [
-    //         ['', 'Angamos-043', '', '', '', '','', ''],
-    //         ['SFP $', '51303', '19/08/2003', '73,735.58', '16689', 'LAZARTE MELGAR O LAZART','ORLOFF FERNANDEZ CARMEN IVAOVA', 'CONTRATO' ],
-    //         ['', 'TOT.DEUDAS ANGAMOS', '', '', 'CONTRATO:1 BOLETAS SUSCRIPCION: 0'+' BOLETAS RESCATES :0','', ''],
-          
-    //         ['', 'Angamos-043', '', '', '', '','', ''],
-    //         ['SFP $', '51303', '19/08/2003', '73,735.58', '16689', 'LAZARTE MELGAR O LAZART','ORLOFF FERNANDEZ CARMEN IVAOVA', 'CONTRATO' ],
-    //         ['', 'TOT.DEUDAS ANGAMOS', '', '', 'CONTRATO:1 BOLETAS SUSCRIPCION: 0'+' BOLETAS RESCATES :0','', ''],
-          
-    //         ['', 'Angamos-043', '', '', '', '','', ''],
-    //         ['SFP $', '51303', '19/08/2003', '73,735.58', '16689', 'LAZARTE MELGAR O LAZART','ORLOFF FERNANDEZ CARMEN IVAOVA', 'CONTRATO' ],
-    //         ['', 'TOT.DEUDAS ANGAMOS', '', '', 'CONTRATO:1 BOLETAS SUSCRIPCION: 0'+' BOLETAS RESCATES :0','', ''],
-          
-    //     ]
-    // }
-
+     
     function createData(name, calories, fat, carbs) {
         return { name, calories, fat, carbs };
       }
+      const rows = [
+        createData('1', 'Edwin', '561615616', 'Activo'),
+      ]; 
 
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
        
@@ -171,19 +144,21 @@ const DocumentationPendingDelivery = () => {
 
     return (
         <>  
-            <div className='documentDebGeneration-header'>
-                <div className='documentDebGeneration-title'>
-                    <h1>Reporte de Documentacion Pendiente de Entrega por Suscripciones y Rescates de Fondos Mutuos CDR:043 de Todas las Agencias Pendientes al 29/05/2023</h1>
+            <div className='subscriptionSearchClients-header'>
+                <div className='subscriptionSearchClients-title'> 
+                    <h1>  Reporte de Documentacion Pendiente de Entrega por Suscripciones y Rescates de Fondos Mutuos CDR:043 de Todas las Agencias Pendientes al 29/05/2023</h1>
                 </div>
-                <div className='documentDebGeneration-body'> 
-                    <div className='documentDebGeneration-body-filters'>
+                <div className='subscriptionSearchClients-body'> 
+                    <div className='subscriptionSearchClients-body-filters'>
                         <div className='date-range'> 
                         </div>
                     </div> 
+                    <div className='subscriptionSearchClients-body-btns'>
                         <button className='btn btn-primary'>Consultar</button>
-                        <button className='btn btn-primary'>Exportar</button>
-                        <button className='btn btn-primary'>Imprimir</button>
-                        <button className='btn btn-primary'>Salir</button> 
+                        <button className='btn btn-default'>Exportar</button>
+                        <button className='btn btn-default'>Imprimir</button>
+                        <button className='btn btn-default'>Salir</button> 
+                    </div>
                 </div>
             </div>  
 
@@ -208,8 +183,7 @@ const DocumentationPendingDelivery = () => {
         {
           setListUser.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map((element,key) =>
           <StyledTableRow 
-          rows={rows}
-          
+          rows={rows} 
           >  
           <StyledTableCell align="center" colSpan={1} >{element.Fondo}</StyledTableCell>
           <StyledTableCell align="left">{element.NumerodeSolicitud}</StyledTableCell>
