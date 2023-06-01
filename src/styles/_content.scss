@@ -34,11 +34,21 @@
     background-color: $secondary-color;
     border-color: $secondary-color;
     color: $primary-color;
-  }
-  .btn-primary:hover {
-    background-color: $secondary-color-hover;
-    border-color: $secondary-color-hover;
-    color: $primary-color-hover;
+    &:hover {
+      background-color: $secondary-color-hover;
+      border-color: $secondary-color-hover;
+      color: $primary-color-hover;
+    }
+    &:disabled {
+      background-color: $color-muted;
+      border-color: $color-muted;
+      color: $color-text;
+    }
+    &:disabled:hover {
+      background-color: $color-muted;
+      border-color: $color-muted;
+      color: $color-text;
+    }
   }
   .btn-secondary {
     background-color: $secondary-color;
