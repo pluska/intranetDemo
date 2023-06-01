@@ -7,7 +7,7 @@ import DocumentationPendingDelivery from './components/DocumentationPendingDeliv
 import SubscriptionsSearchClientsFunds from './components/SubscriptionsSearchClientsFunds';
 import DepsaElectronicChargeNaturalPerson from "./components/DepsaElectronicChargeNaturalPerson";
 import DepsaElectronicChargeJuridicalPerson from "./components/DepsaElectronicChargeJuridicalPerson";
-
+import SubscriptionRequestRecord from "./components/SubscriptionRequestRecord";
 
 function App() {
   return (
@@ -19,8 +19,8 @@ function App() {
      <Route path="/Subscriptions-Search-Clients-Funds" element={<SubscriptionsSearchClientsFunds />} />
      <Route path="/Depsa-Electronic-Charge-Natural-Person" element={<DepsaElectronicChargeNaturalPerson />} />
      <Route path="/Depsa-Electronic-Charge-Juridical-Person" element={<DepsaElectronicChargeJuridicalPerson />} />
-  
-  
+     <Route path="/Subscription-Request-Record" element={<SubscriptionRequestRecord />} />
+ 
     </Routes>
     </Layout>
     </BrowserRouter>
