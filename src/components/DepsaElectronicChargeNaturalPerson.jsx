@@ -23,8 +23,7 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-
-// import styles from "../styles/depsa.module.scss";
+import { styled } from '@mui/system';
 
 
 
@@ -51,6 +50,24 @@ const StyledTableRow = withStyles((theme) => ({
     },
   },
 }))(TableRow);
+
+const StyledInput = styled('TextField')({
+  '.MuiInputLabel-root.Mui-focused': {
+    color: '#444',
+  },
+  '.MuiInput-underline::after': {
+    borderBottom: '1px solid #cc2229'
+  },
+  '.MuiDatePicker-root': {
+    backgroundColor: 'red',
+  },
+});
+
+const StyledCheckbox = styled('TextField')({
+  '.MuiButtonBase-root.Mui-checked': {
+    color: '#cc2229'
+  }
+});
 
 
 const DepsaElectronicChargeNaturalPerson = ({ options }) => {
@@ -140,14 +157,17 @@ const DepsaElectronicChargeNaturalPerson = ({ options }) => {
       </center>
 
 
-      <Grid container spacing={2} style={{ marginTop: 20 }}  >
+      <Grid container spacing={2} style={{ marginTop: 20 }}>
         <Grid item xs={10}>
           <Grid container spacing={2} style={{ textAlign: "left", alignItems: 'center' }}>
             <Grid item xs={3}>
-              <TextField id="standard-basic" label="CDR" variant="standard" className='depsaStyles' />
+              <StyledInput><TextField id="standard-basic" label="CDR" variant="standard" /></StyledInput>
+
             </Grid>
             <Grid item xs={8}>
-              <TextField id="standard-basic" label="Oficina" variant="standard" style={{ width: '80%' }} />
+              <StyledInput>
+                <TextField id="standard-basic" label="Oficina" variant="standard" style={{ width: '80%' }} />
+              </StyledInput>
             </Grid>
             <Grid item xs={3}>
               Documentos:
@@ -159,53 +179,63 @@ const DepsaElectronicChargeNaturalPerson = ({ options }) => {
                 name="radio-buttons-group"
                 style={{ flexDirection: 'row' }}
               >
-                <FormControlLabel value="female" control={<Radio />} label="De Operaciones" />
-                <FormControlLabel value="male" control={<Radio />} label="Actualizados por Usuario" />
+                <StyledCheckbox>
+                  <FormControlLabel value="female" control={<Radio />} label="De Operaciones" />
+                  <FormControlLabel value="male" control={<Radio />} label="Actualizados por Usuario" />
+                </StyledCheckbox>
               </RadioGroup>
             </Grid>
             <Grid item xs={3}>
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DemoContainer components={['DatePicker']}>
-                  <DatePicker label="Desde" />
-                </DemoContainer>
-              </LocalizationProvider>
+              <StyledInput>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DemoContainer components={['DatePicker']}>
+                    <DatePicker label="Desde" />
+                  </DemoContainer>
+                </LocalizationProvider>
+              </StyledInput>
             </Grid>
             <Grid item xs={8}>
               <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between' }}>
 
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DemoContainer components={['DatePicker']}>
-                    <DatePicker label="Hasta" />
-                  </DemoContainer>
-                </LocalizationProvider>
+                <StyledInput>
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DemoContainer components={['DatePicker']}>
+                      <DatePicker label="Hasta" />
+                    </DemoContainer>
+                  </LocalizationProvider>
+                </StyledInput>
 
-                <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }} >
-                  <InputLabel id="demo-simple-select-label">Tipo Doc.</InputLabel>
-                  <Select
-                    value={docType}
-                    labelId="demo-simple-select-outlined-label2"
-                    id="demo-simple-select-outlined2"
-                    onChange={handleChangeDocType}
-                    label="Seleccionar"
-                    style={{ width: 200 }}
-                  >
-                    <MenuItem value={'1'} key={1}>{'Todos'}</MenuItem>
-                    <MenuItem value={'2'} key={2}>{'Suscripciones'}</MenuItem>
-                    <MenuItem value={'3'} key={3}>{'Rescates'}</MenuItem>
-                    <MenuItem value={'4'} key={4}>{'Afiliaciones Virtuales'}</MenuItem>
-                    <MenuItem value={'5'} key={5}>{'Actualizacion de Datos'}</MenuItem>
-                    <MenuItem value={'6'} key={6}>{'DJ Fuera de Perfil'}</MenuItem>
-                  </Select>
-                </FormControl>
-                <TextField
-                  id="standard-basic"
-                  label="Total de Operaciones"
-                  defaultValue="310"
-                  InputProps={{
-                    readOnly: false,
-                  }}
-                  variant="standard"
-                />
+                <StyledInput>
+                  <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }} >
+                    <InputLabel id="demo-simple-select-label">Tipo Doc.</InputLabel>
+                    <Select
+                      value={docType}
+                      labelId="demo-simple-select-outlined-label2"
+                      id="demo-simple-select-outlined2"
+                      onChange={handleChangeDocType}
+                      label="Seleccionar"
+                      style={{ width: 200 }}
+                    >
+                      <MenuItem value={'1'} key={1}>{'Todos'}</MenuItem>
+                      <MenuItem value={'2'} key={2}>{'Suscripciones'}</MenuItem>
+                      <MenuItem value={'3'} key={3}>{'Rescates'}</MenuItem>
+                      <MenuItem value={'4'} key={4}>{'Afiliaciones Virtuales'}</MenuItem>
+                      <MenuItem value={'5'} key={5}>{'Actualizacion de Datos'}</MenuItem>
+                      <MenuItem value={'6'} key={6}>{'DJ Fuera de Perfil'}</MenuItem>
+                    </Select>
+                  </FormControl>
+                </StyledInput>
+                <StyledInput>
+                  <TextField
+                    id="standard-basic"
+                    label="Total de Operaciones"
+                    defaultValue="310"
+                    InputProps={{
+                      readOnly: false,
+                    }}
+                    variant="standard"
+                  />
+                </StyledInput>
               </div>
             </Grid>
           </Grid>
@@ -213,9 +243,9 @@ const DepsaElectronicChargeNaturalPerson = ({ options }) => {
         </Grid>
         <Grid item xs={2}>
           <div style={{ display: 'flex', flexDirection: 'column', }} className='depsa-body-btns' >
-          <button className='btn btn-primary'>Buscar</button>
-          <button className='btn btn-default'>Imprimir Excel</button>
-          <button className='btn btn-default'>Salir</button>
+            <button className='btn btn-primary'>Buscar</button>
+            <button className='btn btn-default'>Imprimir Excel</button>
+            <button className='btn btn-default'>Salir</button>
           </div>
         </Grid>
 
@@ -369,7 +399,7 @@ const DepsaElectronicChargeNaturalPerson = ({ options }) => {
 
         </Grid>
         <Grid item xs={2}>
-        <button className='btn btn-default'>Grabar cambios</button>
+          <button className='btn btn-default'>Grabar cambios</button>
         </Grid>
       </Grid>
     </div>
