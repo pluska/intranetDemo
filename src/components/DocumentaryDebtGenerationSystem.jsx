@@ -254,9 +254,7 @@ const DocumentaryDebtGenerationSystem = () => {
                                 <label htmlFor='date-range-to'>CDR:</label>
                                 <input type='text' id='date-range-to' className='date-range-input' />
                             </div>
-                        </div>
-
-
+                        </div> 
                             <div className='report-filters-container'>
                                 <div className='report-filters-group'>
                                     <label htmlFor='date-range-to'>Funcionario Negocio:</label>
