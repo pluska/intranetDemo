@@ -222,8 +222,8 @@ const SubscriptionRequestRecord = () => {
 
         <div style={{marginLeft:50, marginRight:30, backgroundColor:'#fff'}}>
             <Grid container style={{marginTop:50}}>
-              <Grid item xs={7}  >
-                  <p style={{margin:5, fontSize:'12pt'}}>28- RODRIGUEZ LARRIN GONZALES DEL RIEGO DE AVENDAÑO LETICIA</p>
+              <Grid item xs={7} >
+                   <p style={{margin:5, fontSize:'12pt'}}>28- RODRIGUEZ LARRIN GONZALES DEL RIEGO DE AVENDAÑO LETICIA</p>
               </Grid>
             </Grid> 
             <Grid container style={{marginTop:20}}></Grid>
@@ -231,9 +231,11 @@ const SubscriptionRequestRecord = () => {
               <Grid container style={{marginTop:40}}>
                 <Grid item xs={1} >
                 </Grid> 
+                &nbsp;  
                 <Grid item xs={9}> 
-                <Box sx={{ minWidth: 150 }}>
+                <Box sx={{ minWidth: 150 }}>  
                 <FormControl fullWidth>
+                   
                 <InputLabel id="demo-simple-select-label">Fondo Mutuo:</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
@@ -267,11 +269,8 @@ const SubscriptionRequestRecord = () => {
                 <Grid item xs={3}>
                     <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Hora(HH:MM:SS)" value={'14:36:24'}  variant="outlined" style={{width:'100%'}}  />
                 </Grid> 
-              </Grid>
-
-
-              <Grid container style={{marginTop:20}}></Grid> 
- 
+              </Grid> 
+              <Grid container style={{marginTop:20}}></Grid>  
               <Grid container> 
               <Grid item xs={1} >
                 </Grid> 
@@ -367,7 +366,7 @@ const SubscriptionRequestRecord = () => {
                  </FormControl>
                 </Grid>   
               </Grid>
-              
+              <Grid container style={{marginTop:20}}></Grid>
               <Grid container>
                 <Grid item xs={1} >
                 </Grid>
@@ -375,9 +374,7 @@ const SubscriptionRequestRecord = () => {
                     <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Codigo del RS personal" variant="outlined" style={{width:'100%'}}  />
                 </Grid> 
               </Grid>  
-
-
-
+              <Grid container style={{marginTop:20}}></Grid>
                 <Grid container>
                 <Grid item xs={1} >
                 </Grid>
@@ -386,14 +383,12 @@ const SubscriptionRequestRecord = () => {
                           <a style={{fontSize:18}}>Formas de Pago de la Suscripcion:</a>
                       </Grid>
                   </Grid> 
-
                   <Grid item xs={5}>
-                      <Grid item xs={5} style={{paddingTop:10, textAlign:'left'}} >
+                      <Grid item xs={6} style={{paddingTop:10, textAlign:'left'}} >
                           <a style={{fontSize:18}}>Cuenta Bancaria del Participe:</a>
                       </Grid>
                   </Grid>  
                 </Grid>   
- 
                <Grid container> 
                <Grid item xs={1} >
                 </Grid>
@@ -412,44 +407,123 @@ const SubscriptionRequestRecord = () => {
                  </RadioGroup>
                  </FormControl>
                  </Grid>   
-               </Grid>
-                
+                 </Grid>
+                 <Grid item xs={6}>
+                      <Grid item xs={6} style={{paddingTop:2, textAlign:'left'}} >
+                      <Grid item xs={7}>
+                             <FormControl fullWidth>
+                               <InputLabel id="demo-simple-select-label">Nro. Cuenta:</InputLabel>
+                               <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                // value={1}
+                                label="Nro. Cuenta"
+                                // onChange={handleChange}
+                               >
+                                <MenuItem value={1}>Seleccione</MenuItem>
+                                <MenuItem value={2}>opcion1</MenuItem>
+                                <MenuItem value={3}>opcion2</MenuItem>
+                               </Select>
+                             </FormControl>   
+                             <Grid item xs={12}>
+                              <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Tipo Cuenta:"    variant="outlined"  style={{width:'100%'}}  />
+                             </Grid> 
+                             <Grid item xs={12} style={{paddingTop:10, textAlign:'left'}} >
+                             <FormControlLabel
+                              control={
+                                <Checkbox
+                                  checked={state.checkedA}
+                                  onChange={handleChange}
+                                  name="checkedA"
+                                />
+                              }
+                              style={{position:'inherit'}}
+                              label="Nueva Cuenta"
+                            />
+                        </Grid>   
+                     </Grid>   
+                   </Grid>   
+                 </Grid>
  
-                <Grid item xs={6}>
-                      <Grid item xs={6} style={{paddingTop:10, textAlign:'left'}} >
-                      <Grid item xs={3}>
-                        
-                      <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Empleado" value={'Chavez Mestanza jhansen deiby'}  variant="outlined"  style={{width:'100%'}}  />
-                     </Grid>
-                  </Grid>   
-               </Grid>
+                 <Grid container style={{marginTop:20}}></Grid>
+
+                 <Grid container>
+                <Grid item xs={1} >
+                </Grid>
+                 <Grid item xs={5}>  
+                      <Grid item xs={8}>
+                             <FormControl fullWidth>
+                               <InputLabel id="demo-simple-select-label">Origen de Fondos:</InputLabel>
+                               <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                // value={1}
+                                label="Origen de Fondos"
+                                // onChange={handleChange}
+                               >
+                                <MenuItem value={1}>Seleccione</MenuItem>
+                                <MenuItem value={2}>opcion1</MenuItem>
+                                <MenuItem value={3}>opcion2</MenuItem>
+                               </Select>
+                             </FormControl>    
+                     </Grid>   
+                   </Grid>   
+                   <Grid item xs={5}>
+                        <Grid item xs={8}>
+                             <FormControl fullWidth>
+                               <InputLabel id="demo-simple-select-label">Proposito de fondo mutuo:</InputLabel>
+                               <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                // value={1}
+                                label="Proposito de fondo mutuo"
+                                // onChange={handleChange}
+                               >
+                                <MenuItem value={1}>Seleccione</MenuItem>
+                                <MenuItem value={2}>opcion1</MenuItem>
+                                <MenuItem value={3}>opcion2</MenuItem>
+                               </Select>
+                             </FormControl>    
+                     </Grid>   
+                </Grid>
+                 </Grid>
+
+                 <Grid container style={{marginTop:20}}></Grid>
+                 <Grid container>
+                <Grid item xs={1} >
+                </Grid>
+                 <Grid item xs={5}>  
+                      <Grid item xs={10}>
+                             <FormControl fullWidth>
+                               <InputLabel id="demo-simple-select-label">Nro. Cuenta:</InputLabel>
+                               <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                // value={1}
+                                label="Nro. Cuenta"
+                                // onChange={handleChange}
+                               >
+                                <MenuItem value={1}>Seleccione</MenuItem>
+                                <MenuItem value={2}>opcion1</MenuItem>
+                                <MenuItem value={3}>opcion2</MenuItem>
+                               </Select>
+                             </FormControl>    
+                     </Grid>   
+                   </Grid>   
+                   <Grid item xs={3}>
+                    <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Monto de Suscrip:" variant="outlined" value={'0.00'}  style={{width:'100%'}}  />
+                </Grid>
+                 </Grid>
+
+                
+
                 </Grid>   
-               
-
-
-            </div>
-            {/* <div>
-            <Grid container >
-              <Grid item xs={1} >
-              </Grid>
-              <Grid item xs={1} style={{paddingBottom:10, textAlign:'left',paddingRight:5}}>
-                <Button variant="contained" className="btn-consultar"  >
-                  Guardar
-                </Button>
-              </Grid>
-              <Grid item xs={2} style={{paddingBottom:10, textAlign:'left'}}>
-                <Button variant="contained" className={classes.btncancelar} >
-                  Cancelar
-                </Button>
-              </Grid>
-            </Grid>
-            </div>  */}
-
-             <div className='report-body-btns'>
+              </div> 
+              <div className='report-body-btns'>
                         <button className='btn btn-primary'>Grabar</button>
                         <button className='btn btn-default'>Limpiar</button>
                         <button className='btn btn-default'>Salir</button>
-                    </div>
+               </div>
         </div> 
                    
    
