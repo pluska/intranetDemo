@@ -11,7 +11,7 @@
     }
   }
   .report-body {
-    width: 100%;
+    width: 95%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,11 +72,14 @@
         }
       }
     .report-body-btns {
-      width: 16%;
-      display: flex;
+      width: 20%;
+      display: block;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      button {
+        margin: 10px 0;
+      }
     }
   }
 }
