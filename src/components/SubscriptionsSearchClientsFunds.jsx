@@ -237,7 +237,7 @@ const SubscriptionsSearchClientsFunds = () => {
           rows={rows} 
           >  
   
-          <StyledTableCell  align="center" id={1}   onClick={(e) => handleAlerta(e)} >{element.NombredelCliente}</StyledTableCell>
+          <StyledTableCell  align="center" id={1} style={{color: "blue", textDecorationLine: "underline", cursor: "pointer"}}  onClick={(e) => handleAlerta(e)} >{element.NombredelCliente}</StyledTableCell>
           <StyledTableCell align="left">{element.CuentaBT}</StyledTableCell>
           <StyledTableCell align="left">{element.CodigoParticipe}</StyledTableCell>
           <StyledTableCell align="left">{element.TipoCliente}</StyledTableCell> 
