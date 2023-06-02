@@ -164,7 +164,13 @@ const DocumentationPendingDelivery = () => {
 
           <div>
            {/* <Table  data={tableData} /> */}
-      <Grid item xs={12} >
+
+           <Grid container >
+          <Grid item xs={1} >
+          </Grid>
+          <Grid item xs={10} >
+            <TableContainer component={Paper}></TableContainer>
+      
       <TableContainer component={Paper}></TableContainer> 
       <Table    className={classes.table} aria-label="customized table">
       <TableHead>
@@ -214,6 +220,10 @@ const DocumentationPendingDelivery = () => {
       />
     </Grid>
 
+        </Grid>
+          <Grid item xs={1} >
+          </Grid>
+       
           </div>  
 
         </>

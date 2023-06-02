@@ -16,6 +16,8 @@ import SubscriptionRequestRecord from "./SubscriptionRequestRecord";
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
+
+
 const StyledTableCell = withStyles((theme) => ({
     head: {
       backgroundColor: '#444',
@@ -268,8 +270,7 @@ const SubscriptionsSearchClientsFunds = () => {
       </Grid>
           <Grid item xs={1} >
           </Grid>
-        </Grid>
-
+        </Grid> 
           </div> 
           
         </>
