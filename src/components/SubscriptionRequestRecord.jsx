@@ -27,7 +27,8 @@ import Select from '@mui/material/Select';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup'; 
 import FormLabel from '@mui/material/FormLabel';
- 
+import { TextareaAutosize } from '@mui/base';
+import { BorderStyle } from '@material-ui/icons';
 
 const StyledTableCell = withStyles((theme) => ({
     head: {
@@ -219,23 +220,46 @@ const SubscriptionRequestRecord = () => {
                              </div>
                            </div>
                     </div> */}
-
+             <div className='report-header'> 
+               <div className='report-title'>
+                    <h1>Registros de Solicitudes de Suscripción</h1>
+                </div>  
+                </div>
+                 
         <div style={{marginLeft:50, marginRight:30, backgroundColor:'#fff'}}>
-            <Grid container style={{marginTop:50}}>
-              <Grid item xs={7} >
-                   <p style={{margin:5, fontSize:'12pt'}}>28- RODRIGUEZ LARRIN GONZALES DEL RIEGO DE AVENDAÑO LETICIA</p>
-              </Grid>
+            <Grid container style={{marginTop:40}}>
+              <Grid item xs={8} >
+                  <strong><p style={{margin:4, fontSize:'12pt'}}>28- RODRIGUEZ LARRIN GONZALES DEL RIEGO DE AVENDAÑO LETICIA</p></strong>  
+              </Grid> 
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <Grid item xs={2} >
+                 <div className='report-body-btns'>
+                        <button className='btn btn-primary'>Grabar</button>
+                        <button className='btn btn-default'>Limpiar</button>
+                        <button className='btn btn-default'>Salir</button>
+                 </div>
+                 </Grid>
             </Grid> 
-            <Grid container style={{marginTop:20}}></Grid>
-            <div style={{paddingBottom:20}}>
-              <Grid container style={{marginTop:40}}>
+            <Grid container style={{marginTop:12 }}></Grid> 
+            <div style={{paddingBottom:15}}  >   
+             <div  style= {{
+                          border: '1px solid #d0d0d0',
+                          // borderRadius: '0.1rem',
+                          backgroundColor: '#fff',
+                          // boxShadow: '0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1)',
+                          padding: '1.5rem 0.6rem',
+                          margin: 'auto',
+                          width: '75%', 
+                          borderWidth: '1px',
+                          BorderStyle: 'solid',
+                          }}>
+               <Grid container> 
+                &nbsp;  
                 <Grid item xs={1} >
                 </Grid> 
-                &nbsp;  
-                <Grid item xs={9}> 
-                <Box sx={{ minWidth: 150 }}>  
+                <Grid  item xs={10}> 
+                <Box sx={{ minWidth: 120 }}>  
                 <FormControl fullWidth>
-                   
                 <InputLabel id="demo-simple-select-label">Fondo Mutuo:</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
@@ -252,13 +276,11 @@ const SubscriptionRequestRecord = () => {
               </Box>
                 </Grid>
               </Grid>
-
               <Grid container style={{marginTop:20}}></Grid>
-
               <Grid container>
                 <Grid item xs={1} >
                 </Grid> 
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" placeholder='Ult Valor Cuota'  variant="outlined" style={{width:'100%'}}  />
                 </Grid>  
                 &nbsp; 
@@ -270,9 +292,23 @@ const SubscriptionRequestRecord = () => {
                     <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Hora(HH:MM:SS)" value={'14:36:24'}  variant="outlined" style={{width:'100%'}}  />
                 </Grid> 
               </Grid> 
+              </div>
+               
               <Grid container style={{marginTop:20}}></Grid>  
+ 
+              <div  style= {{
+                         border: '1px solid #d0d0d0',
+                         // borderRadius: '0.1rem',
+                         backgroundColor: '#fff',
+                         // boxShadow: '0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1)',
+                         padding: '1.5rem 0.6rem',
+                         margin: 'auto',
+                         width: '75%', 
+                         borderWidth: '1px',
+                         BorderStyle: 'solid',
+                          }}>
               <Grid container> 
-              <Grid item xs={1} >
+                <Grid item xs={1} >
                 </Grid> 
                 <Grid item xs={3}>
                 <FormControlLabel
@@ -288,12 +324,13 @@ const SubscriptionRequestRecord = () => {
                 />
                 </Grid>
               </Grid>
+ 
               <Grid container style={{marginTop:20}}></Grid>
 
               <Grid container>
                 <Grid item xs={1} >
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Nro Total Cuotas  Vig:" value={'0.0000'} variant="outlined" style={{width:'100%'}}  />
                 </Grid>
                 &nbsp; 
@@ -301,12 +338,23 @@ const SubscriptionRequestRecord = () => {
                     <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Valorizado:" variant="outlined" value={'US$ 0.00'}  style={{width:'100%'}}  />
                 </Grid>
               </Grid>
+              </div>
               <Grid container style={{marginTop:20}}></Grid>
-
+              <div  style= {{
+                          border: '1px solid #d0d0d0',
+                          // borderRadius: '0.1rem',
+                          backgroundColor: '#fff',
+                          // boxShadow: '0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1)',
+                          padding: '1.5rem 0.6rem',
+                          margin: 'auto',
+                          width: '75%', 
+                          borderWidth: '1px',
+                          BorderStyle: 'solid',
+                          }}>
               <Grid container>
                 <Grid item xs={1} >
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Cod. Ofic:" value={'010'} variant="outlined" style={{width:'100%'}}  />
                 </Grid>
                 &nbsp; 
@@ -317,13 +365,25 @@ const SubscriptionRequestRecord = () => {
                 <Grid item xs={3}>
                     <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Monto de Suscrip:" variant="outlined" value={'0.00'}  style={{width:'100%'}}  />
                 </Grid>
-              </Grid>
-              <Grid container style={{marginTop:20}}></Grid>
+              </Grid> 
+               </div>
 
+              <Grid container style={{marginTop:20}}></Grid>
+              <div  style= {{
+                          border: '1px solid #d0d0d0',
+                          // borderRadius: '0.1rem',
+                          backgroundColor: '#fff',
+                          // boxShadow: '0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1)',
+                          padding: '1.5rem 0.6rem',
+                          margin: 'auto',
+                          width: '75%', 
+                          borderWidth: '1px',
+                          BorderStyle: 'solid',
+                          }}>
               <Grid container>
                 <Grid item xs={1} >
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                     <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Codigo de Empleado" value={'23117'} variant="outlined" style={{width:'100%'}}  />
                 </Grid>
                 &nbsp; 
@@ -331,17 +391,27 @@ const SubscriptionRequestRecord = () => {
                     <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Empleado" value={'Chavez Mestanza jhansen deiby'}  variant="outlined"  style={{width:'100%'}}  />
                 </Grid>
               </Grid>  
-              <Grid container style={{marginTop:20}}></Grid>
-
-
+            </div> 
+              <Grid container style={{marginTop:20}}></Grid> 
+              <div  style= {{
+                         border: '1px solid #d0d0d0',
+                         // borderRadius: '0.1rem',
+                         backgroundColor: '#fff',
+                         // boxShadow: '0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1)',
+                         padding: '1.5rem 0.6rem',
+                         margin: 'auto',
+                         width: '75%', 
+                         borderWidth: '1px',
+                         BorderStyle: 'solid',
+                          }}>
               <Grid container>
                 <Grid item xs={1} >
                 </Grid> 
-                <Grid item xs={3} style={{paddingTop:10, textAlign:'left'}} >
+                <Grid item xs={4} style={{paddingTop:10, textAlign:'left'}} >
                     <a style={{fontSize:18}}>Seleccione Personal de Venta</a>
                 </Grid>
                 &nbsp; 
-                <Grid item xs={3}>
+                <Grid item xs={4}>
                 <FormControl> 
                   <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
@@ -354,7 +424,7 @@ const SubscriptionRequestRecord = () => {
                 </Grid> 
                 &nbsp; 
 
-                <Grid item xs={3}>
+                <Grid item xs={2}>
                 <FormControl> 
                   <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
@@ -365,8 +435,8 @@ const SubscriptionRequestRecord = () => {
                  </RadioGroup>
                  </FormControl>
                 </Grid>   
-              </Grid>
-              <Grid container style={{marginTop:20}}></Grid>
+              </Grid> 
+              <Grid container style={{marginTop:20}}></Grid>  
               <Grid container>
                 <Grid item xs={1} >
                 </Grid>
@@ -374,6 +444,19 @@ const SubscriptionRequestRecord = () => {
                     <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Codigo del RS personal" variant="outlined" style={{width:'100%'}}  />
                 </Grid> 
               </Grid>  
+              </div> 
+              <Grid container style={{marginTop:20}}></Grid> 
+              <div  style= {{
+                         border: '1px solid #d0d0d0',
+                         // borderRadius: '0.1rem',
+                         backgroundColor: '#fff',
+                         // boxShadow: '0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1)',
+                         padding: '1.5rem 0.6rem',
+                         margin: 'auto',
+                         width: '75%', 
+                         borderWidth: '1px',
+                         BorderStyle: 'solid',
+                          }}>
               <Grid container style={{marginTop:20}}></Grid>
                 <Grid container>
                 <Grid item xs={1} >
@@ -384,16 +467,16 @@ const SubscriptionRequestRecord = () => {
                       </Grid>
                   </Grid> 
                   <Grid item xs={5}>
-                      <Grid item xs={6} style={{paddingTop:10, textAlign:'left'}} >
+                      <Grid item xs={8} style={{paddingTop:10, textAlign:'left'}} >
                           <a style={{fontSize:18}}>Cuenta Bancaria del Participe:</a>
                       </Grid>
                   </Grid>  
-                </Grid>   
-               <Grid container> 
+                </Grid>    
+               <Grid container>  
                <Grid item xs={1} >
                 </Grid>
                <Grid item xs={5}>
-                      <Grid item xs={5} style={{paddingTop:10, textAlign:'left'}} >
+               <Grid item xs={6} style={{paddingTop:10, textAlign:'left'}} >
                 <FormControl> 
                   <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
@@ -409,8 +492,8 @@ const SubscriptionRequestRecord = () => {
                  </Grid>   
                  </Grid>
                  <Grid item xs={6}>
-                      <Grid item xs={6} style={{paddingTop:2, textAlign:'left'}} >
-                      <Grid item xs={7}>
+                      <Grid item xs={7} style={{paddingTop:2, textAlign:'left'}} >
+                      <Grid item xs={10}>
                              <FormControl fullWidth>
                                <InputLabel id="demo-simple-select-label">Nro. Cuenta:</InputLabel>
                                <Select
@@ -444,12 +527,26 @@ const SubscriptionRequestRecord = () => {
                      </Grid>   
                    </Grid>   
                  </Grid>
- 
+                 </Grid>
+                    
+                 </div>
                  <Grid container style={{marginTop:20}}></Grid>
 
+
+                 <div  style= {{
+                         border: '1px solid #d0d0d0',
+                         // borderRadius: '0.1rem',
+                         backgroundColor: '#fff',
+                         // boxShadow: '0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1)',
+                         padding: '1.5rem 0.6rem',
+                         margin: 'auto',
+                         width: '75%', 
+                         borderWidth: '1px',
+                         BorderStyle: 'solid',
+                          }}>
                  <Grid container>
-                <Grid item xs={1} >
-                </Grid>
+                 <Grid item xs={1} >
+                 </Grid>
                  <Grid item xs={5}>  
                       <Grid item xs={8}>
                              <FormControl fullWidth>
@@ -466,7 +563,7 @@ const SubscriptionRequestRecord = () => {
                                 <MenuItem value={3}>opcion2</MenuItem>
                                </Select>
                              </FormControl>    
-                     </Grid>   
+                   </Grid>   
                    </Grid>   
                    <Grid item xs={5}>
                         <Grid item xs={8}>
@@ -489,46 +586,105 @@ const SubscriptionRequestRecord = () => {
                  </Grid>
 
                  <Grid container style={{marginTop:20}}></Grid>
+                 
                  <Grid container>
                 <Grid item xs={1} >
                 </Grid>
-                 <Grid item xs={5}>  
-                      <Grid item xs={10}>
-                             <FormControl fullWidth>
-                               <InputLabel id="demo-simple-select-label">Nro. Cuenta:</InputLabel>
-                               <Select
-                                labelId="demo-simple-select-label"
-                                id="demo-simple-select"
-                                // value={1}
-                                label="Nro. Cuenta"
-                                // onChange={handleChange}
-                               >
-                                <MenuItem value={1}>Seleccione</MenuItem>
-                                <MenuItem value={2}>opcion1</MenuItem>
-                                <MenuItem value={3}>opcion2</MenuItem>
-                               </Select>
-                             </FormControl>    
-                     </Grid>   
-                   </Grid>   
+                    <Grid item xs={5}>  
+                      <Grid item xs={8}>
+                      <p style={{margin:5, fontSize:'12pt'}}>¿Los fondos que ingresaran a esta cuenta son de propiedad y/o en beneficio de un tercero?</p>
+                     </Grid>
+                    </Grid>   
                    <Grid item xs={3}>
-                    <TextField id="outlined-margin-dense" className={classes.formControl} margin="dense" label="Monto de Suscrip:" variant="outlined" value={'0.00'}  style={{width:'100%'}}  />
-                </Grid>
+                     <FormControl> 
+                        <RadioGroup
+                          aria-labelledby="demo-radio-buttons-group-label"
+                          defaultValue="female"
+                          name="radio-buttons-group"
+                        >
+                      <FormControlLabel value="female" control={<Radio />} label="SI" />  
+                      </RadioGroup>
+                     </FormControl> 
+
+                     <FormControl> 
+                        <RadioGroup
+                          aria-labelledby="demo-radio-buttons-group-label"
+                          defaultValue="female"
+                          name="radio-buttons-group"
+                        >
+                      <FormControlLabel value="female" control={<Radio />} label="NO" />  
+                      </RadioGroup>
+                     </FormControl> 
+                   </Grid>
                  </Grid>
+            </div>
 
-                
-
-                </Grid>   
-              </div> 
-              <div className='report-body-btns'>
-                        <button className='btn btn-primary'>Grabar</button>
-                        <button className='btn btn-default'>Limpiar</button>
-                        <button className='btn btn-default'>Salir</button>
-               </div>
-        </div> 
-                   
-   
-               
-          
+            <Grid container style={{marginTop:20}}></Grid> 
+            <div  style= {{
+                          border: '1px solid #d0d0d0',
+                          // borderRadius: '0.1rem',
+                          backgroundColor: '#fff',
+                          // boxShadow: '0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1)',
+                          padding: '1.5rem 0.6rem',
+                          margin: 'auto',
+                          width: '75%', 
+                          borderWidth: '1px',
+                          BorderStyle: 'solid',
+                          }}>
+              <Grid container>
+                 <Grid item xs={1}>
+                 </Grid>
+                    <Grid item xs={4}>  
+                      <Grid item xs={8}>
+                      <p style={{margin:5, fontSize:'12pt'}}>Canal de Atención:</p>
+                     </Grid>
+                    </Grid>   
+                   <Grid item xs={5}>
+                     <FormControl> 
+                        <RadioGroup
+                          aria-labelledby="demo-radio-buttons-group-label"
+                          defaultValue="female"
+                          name="radio-buttons-group"
+                        >
+                      <FormControlLabel value="female" control={<Radio />} label="Red de Agencias" />  
+                      </RadioGroup>
+                     </FormControl>  
+                     <FormControl> 
+                        <RadioGroup
+                          aria-labelledby="demo-radio-buttons-group-label"
+                          defaultValue="female"
+                          name="radio-buttons-group"
+                        >
+                      <FormControlLabel value="female" control={<Radio />} label="Scotia en Linea - Joy" />  
+                      </RadioGroup>
+                     </FormControl> 
+                   </Grid>
+                 </Grid>  
+                 </div> 
+                 <Grid container style={{marginTop:20}}></Grid> 
+                 <div  style= {{
+                          border: '1px solid #d0d0d0',
+                          // borderRadius: '0.1rem',
+                          backgroundColor: '#fff',
+                          // boxShadow: '0 0 0.5rem 0.25rem rgba(0, 0, 0, 0.1)',
+                          padding: '1.5rem 0.6rem',
+                          margin: 'auto',
+                          width: '75%', 
+                          borderWidth: '1px',
+                          BorderStyle: 'solid',
+                          }}>
+                <Grid container>
+                    <Grid item xs={1}>
+                    </Grid>
+                    <Grid item xs={10}>  
+                      <Grid item xs={11}>
+                      <TextareaAutosize label="Observaciones" variant="outlined" placeholder='Observaciones'  minRows={6}  id="outlined-margin-dense"   margin="dense"   style={{width:'100%'}}  />
+                     </Grid>
+                    </Grid>    
+                 </Grid> 
+                </div> 
+              </div>  
+           </div>  
         </>
     )
 }

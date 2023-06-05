@@ -169,15 +169,14 @@ const SubscriptionsSearchClientsFunds = () => {
                 </div>
                 <div className='report-body'>
                     <div className='report-body-filters'> 
-                            <div className='report-filters-container'>      
-
+                            <div className='report-filters-container'>       
                              <div className='report-filters-group'>
                                 <label >Nombre de Cliente: </label>
                                 <input type='text' id='date-range-input'   />
                              </div>
 
                             <div className='report-filters-group'>
-                                <label>seleccionar:</label>
+                                <label>Seleccionar:</label>
                                 <select className='date-range-input' onChange={(e) => handleClickselect(e)} >
                                     <option value="1">Cuenta BT</option>
                                     <option value="2">Codigo Participe</option>
