@@ -46,7 +46,8 @@ const Layout = ({children}) => {
       ]}
       ]}, 
     {name: 'Registros', ref: '#',dropdown: [
-      {name: 'Suscripciones', ref: '/Subscriptions-Search-Clients-Funds'} 
+      {name: 'Suscripciones', ref: '/Subscriptions-Search-Clients-Funds'} ,
+      {name: 'Rescates', ref: '/Rescue-Client-Search'}  
       ]},
     {name: 'Información', ref: '#'},
     {name: 'Sistemas', ref: '#'}, 
