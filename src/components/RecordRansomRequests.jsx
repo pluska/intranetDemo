@@ -16,7 +16,6 @@ import BorderColorSharpIcon from '@material-ui/icons/BorderColorSharp';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined';
- 
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Box from '@mui/material/Box';
@@ -34,7 +33,7 @@ const StyledTableCell = withStyles((theme) => ({
     head: {
       backgroundColor: '#444',
       color: theme.palette.common.white,
-      fontSize: 10,
+      fontSize: 8,
       padding:8,
       border: '1px solid #d0d0d0',
     },
@@ -77,13 +76,16 @@ const RecordRansomRequests = () => {
     const rows = [
         createData('1', 'Edwin', '561615616', 'Activo'),
       ];
-      const [messageError,setMessageError] = React.useState('');
+    const [messageError,setMessageError] = React.useState('');
     const [show, setShow] = React.useState(false);
     const [Name, setName] = React.useState('');
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(6); 
     const classes = useStyles(); 
-    const [ListUser] = React.useState([]); 
+    const [ListUser] = React.useState([]);  
+    const [TipoForma, setTipoForma] = React.useState(''); 
+    const [RedAgencia,setRedAgencia] = React.useState('');
+   
     
     const now = new Date();
     const formatDate = (date) => {
@@ -103,42 +105,40 @@ const RecordRansomRequests = () => {
     console.log(event.target.name); 
     setState({ ...state, [event.target.name]: event.target.checked });
   };
-     
-  console.log(state);
+      
 
-  const tableData = {
-    th: [
+//   const tableData = {
+//     th: [
          
-        { name: 'Nro. Certificado', className: 'fund' },
-        { name: 'Numero Cuotas', className: 'bank-account' },
-        { name: '¿Rescatar?', className: 'currency' },
-        { name: 'Val. IGV', className: 'account-number' },
-        { name: 'Dias Corridos', className: 'module-balance' },
-        { name: 'Ganancia', className: 'bt-balance' },
-        { name: '¿Resc.Prog.?', className: 'difference' },
-        { name: '¿Emitido?', className: 'bt-balance' },
-        { name: 'Valor Actual', className: 'bt-balance' },
-        { name: 'Tipo RESC.', className: 'bt-balance' },
-        { name: 'Monto RESC.', className: 'bt-balance' },
-        { name: 'Cuotas RESC.', className: 'bt-balance' },
-        { name: 'Tipo SOLI.', className: 'bt-balance' },
-        { name: 'Nro.RPROG.', className: 'bt-balance' },
-        { name: 'Comision(%)', className: 'bt-balance' },
-        { name: 'Cod.EL', className: 'bt-balance' },
+//         { name: 'Nro. Certificado', className: 'fund' },
+//         { name: 'Numero Cuotas', className: 'bank-account' },
+//         { name: '¿Rescatar?', className: 'currency' },
+//         { name: 'Val. IGV', className: 'account-number' },
+//         { name: 'Dias Corridos', className: 'module-balance' },
+//         { name: 'Ganancia', className: 'bt-balance' },
+//         { name: '¿Resc.Prog.?', className: 'difference' },
+//         { name: '¿Emitido?', className: 'bt-balance' },
+//         { name: 'Valor Actual', className: 'bt-balance' },
+//         { name: 'Tipo RESC.', className: 'bt-balance' },
+//         { name: 'Monto RESC.', className: 'bt-balance' },
+//         { name: 'Cuotas RESC.', className: 'bt-balance' },
+//         { name: 'Tipo SOLI.', className: 'bt-balance' },
+//         { name: 'Nro.RPROG.', className: 'bt-balance' },
+//         { name: 'Comision(%)', className: 'bt-balance' },
+//         { name: 'Cod.EL', className: 'bt-balance' },
 
-    ],
-    data: [
-        [  '8074272', 'Razon social', 'Rescate Parcial valor desconocido', 1, 1,
-            '23454566', 'Recibido', 'Completo', 'Observado', 'Doir', 
-            'Falta Firma Participe','perfiles de inversión'],
+//     ],
+//     data: [
+//         [  '8074272', 'Razon social', 'Rescate Parcial valor desconocido', 1, 1,
+//             '23454566', 'Recibido', 'Completo', 'Observado', 'Doir', 
+//             'Falta Firma Participe','perfiles de inversión'],
 
-        [  '80742256', 'Razon social', 'Deposito', 1, 2,
-            '1234567', 'Pendiente', 'Incompleto', 'Regula_Cliente', '', '', 
-            'perfiles de inversión']
-    ]
-}
-
-
+//         [  '80742256', 'Razon social', 'Deposito', 1, 2,
+//             '1234567', 'Pendiente', 'Incompleto', 'Regula_Cliente', '', '', 
+//             'perfiles de inversión']
+//     ]
+// }
+ 
     const setList = [
         {
            "NombredelCliente":"Jimenez Tode Roberto",
@@ -157,8 +157,7 @@ const RecordRansomRequests = () => {
     const userIdHandler = (value) => {
      console.log(value);
     };
- 
-     
+  
     const handleClickselect = (event) =>{
         console.log(event.target.value); 
         if(event.target.value==='1'){ 
@@ -167,8 +166,7 @@ const RecordRansomRequests = () => {
             setValueCombo(2);
         }
      } 
-
-
+ 
      function handleAlerta(event){ 
         console.log(event.currentTarget.id); 
         console.log(event.target.value); 
@@ -214,7 +212,25 @@ const RecordRansomRequests = () => {
           //    setesobligatoriounvalor(false);
           // }
   };
+
+  const handleRadioButtonFormas= (event) => {
+    console.log("entra al radio button");
+    const value = event.target.value; 
+        setTipoForma(value); 
+        console.log(value); 
+};
+
+
+const handleRadioButtonRedAgencia =(event) => {
+    console.log("entra al radio button 222");
+    const value = event.target.value; 
+        setRedAgencia(value); 
+       
+}
+
+console.log(RedAgencia);
  
+   
     return (
         <>   
              <div className='report-header'> 
@@ -305,10 +321,11 @@ const RecordRansomRequests = () => {
                          width: '75%', 
                          borderWidth: '1px',
                          BorderStyle: 'solid',
-                          }}>
-  
-                 <Grid container > 
-                 <Grid item xs={6} >
+                          }}> 
+                 <Grid container> 
+                 <Grid item xs={1} >
+                            </Grid>
+                  <Grid item xs={10}>
                     <TableContainer component={Paper}></TableContainer>
                         <Table className={classes.table} aria-label="customized table">
                         <TableHead>
@@ -539,12 +556,6 @@ const RecordRansomRequests = () => {
                           <a style={{fontSize:18}}>Formas de Pago de la Suscripcion:</a>
                       </Grid>
                   </Grid> 
-
-                  {/* <Grid item xs={5}>
-                      <Grid item xs={8} style={{paddingTop:0, textAlign:' '}} >
-                          <a style={{fontSize:18}}>Cuenta Bancaria del Participe:</a>
-                      </Grid>
-                  </Grid>   */}
                 </Grid>    
                <Grid container>  
                <Grid item xs={1} >
@@ -554,13 +565,16 @@ const RecordRansomRequests = () => {
                 <FormControl> 
                   <RadioGroup
                     aria-labelledby="demo-radio-buttons-group-label"
-                    defaultValue="female"
+                  
                     name="radio-buttons-group"
+                    // value="1" 
+                    checked={TipoForma == "1" || TipoForma == "2" || TipoForma == "3" ||TipoForma == "4"   }
+                    onChange={(event) => handleRadioButtonFormas(event)}
                   >
-                 <FormControlLabel value="female" control={<Radio />} label="Abono en Cuenta" /> 
-                 <FormControlLabel value="female" control={<Radio />} label="Orden Pago en Agencia" /> 
-                 <FormControlLabel value="female" control={<Radio />} label="Transferencia BCRP" /> 
-                 <FormControlLabel value="female" control={<Radio />} label="Transferencia al Exterior" /> 
+                 <FormControlLabel value="1" control={<Radio />} label="Abono en Cuenta" /> 
+                 <FormControlLabel value="2" control={<Radio />} label="Orden Pago en Agencia" /> 
+                 <FormControlLabel value="3" control={<Radio />} label="Transferencia BCRP" /> 
+                 <FormControlLabel value="4" control={<Radio />} label="Transferencia al Exterior" /> 
                  </RadioGroup>
                  </FormControl>
                  </Grid>   
@@ -665,21 +679,27 @@ const RecordRansomRequests = () => {
                      <FormControl> 
                         <RadioGroup
                           aria-labelledby="demo-radio-buttons-group-label"
-                          defaultValue="female"
+                        //   defaultValue="female"
                           name="radio-buttons-group"
+                          checked={RedAgencia === 5 }
+                          onChange={(event) => handleRadioButtonRedAgencia(event)}
                         >
-                      <FormControlLabel value="female" control={<Radio />} label="Red de Agencias" />  
+                      <FormControlLabel value="5" control={<Radio />} label="Red de Agencias" />  
                       </RadioGroup>
                      </FormControl>  
+
                      <FormControl> 
                         <RadioGroup
                           aria-labelledby="demo-radio-buttons-group-label"
-                          defaultValue="female"
+                        //   defaultValue="female"
                           name="radio-buttons-group"
+                          checked={RedAgencia === 6 }
+                          onChange={(event) => handleRadioButtonRedAgencia(event)}
                         >
-                      <FormControlLabel value="female" control={<Radio />} label="Scotia en Linea - Joy" />  
+                      <FormControlLabel value="6" control={<Radio />} label="Scotia en Linea - Joy" />  
                       </RadioGroup>
                      </FormControl> 
+
                    </Grid>
                  </Grid>  
                  </div> 

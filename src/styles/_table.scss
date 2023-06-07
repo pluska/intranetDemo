@@ -1,17 +1,24 @@
 .table {
-  width: 80%;
+ 
+  padding:1;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 97%;
   margin-bottom: 1rem;
   background-color: transparent;
   color: #212529;
   margin: auto;
+   
   .table-body {
-    width: 80%;
+    width: 92%;
     border-collapse: collapse;
     vertical-align: middle;
     border-color: inherit;
+    font-size: 10 !important ;
     table {
       margin: auto;
       border-spacing: 0;
+      font-size: 10 !important ;
     }
     thead {
       display: table-header-group;
