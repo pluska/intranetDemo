@@ -272,7 +272,7 @@ const DocumentaryDebtGenerationSystem = () => {
                     </div>
                 </div>
             </div>
-            <div className='report-table'>
+            <div     className='report-table'>
                 <Table data={tableData} />
             </div>
         </>

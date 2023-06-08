@@ -51,7 +51,7 @@ const StyledTableCell = withStyles((theme) => ({
   }))(TableRow);
  
  
-const SubscriptionsSearchClientsFunds = () => {
+const RescueClientSearch = () => {
   
     const navigate = useNavigate();
 
@@ -77,34 +77,16 @@ const SubscriptionsSearchClientsFunds = () => {
    
    
     const [ValueCombo, setValueCombo] = React.useState(0);
- 
-    // const tableData = {
-    //     th: [
-    //         { name: 'Nombre del Cliente', className: 'date' },
-    //         { name: 'Cuenta BT', className: 'date' },
-    //         { name: 'Codigo Participe', className: 'date' },
-    //         { name: 'Tipo Cliente', className: 'date' },
-    //         { name: 'Segmento', className: 'date' },
-    //         { name: 'Tipo Doc.del Titular', className: 'fund' },
-    //         { name: 'Numero Doc.del Titular', className: 'bt-balance' },
-    //         { name: 'T/C', className: 'bt-balance' },
-    //         { name: 'Estatus', className: 'bt-balance' },
-    //     ],
-    //     data: [
-    //         [  'Jimenez Tode Roberto', '1027', '263081','Particular' ,'Premium' ,
-    //             'L.E/.D.N.I', '07808494', '', ''], 
-    //     ]
-    // }
- 
+  
     const setList = [
         {
-           "NombredelCliente":"Jimenez Tode Roberto",
-           "CuentaBT":"1027",
-           "CodigoParticipe":"263081",
+           "NombredelCliente":"RODRIGUE LARRAIN GONZALES DEL RIEGO DE AVENDAÑ LETICIA",
+           "CuentaBT":"3925306",
+           "CodigoParticipe":"28",
            "TipoCliente":"Particular",
-           "Segmento":"Premium",
+           "Segmento":"Preferente",
            "TipoDocdelTitular":"L.E/.D.N.I",
-           "NumeroDocdelTitular":"07808494",
+           "NumeroDocdelTitular":"07817640",
            "TC":"",
            "Estatus":"", 
         }
@@ -142,7 +124,7 @@ const SubscriptionsSearchClientsFunds = () => {
       if(event.currentTarget.id==1){
         Swal.fire({
             title: 'Alerta',
-            text: "El partícipe tiene pendiente la firma del contrato. Por favor, hacer firmar contrato y enviarlo a DEPSA(PN) y a SCOTIAFONDOS(PJ).",
+            text: "OBLIGATORIO: Hacer firmar Contrato de Administracion de FM al cliente y ESCANEARLO a: jhansen.chavez@scotiabank.com.pe. El contrato original de P.Natural, entregarlo al jefe de Servicios para envio a la Almacenera bajo rotulo: Regularizacion y los contratos de P.juridica enviarlos a of.Scotia Fondos.",
             // icon: 'warning',
             //   showCancelButton: true,
              confirmButtonColor: '#cc2229',
@@ -154,7 +136,7 @@ const SubscriptionsSearchClientsFunds = () => {
                 //PostEditUser();
                 console.log('entraaaa'); 
                 // return <Navigate to='/' /> 
-                navigate("/Subscription-Request-Record")
+                navigate("/Record-Ransom-Requests")
             }
           })
       } 
@@ -165,7 +147,7 @@ const SubscriptionsSearchClientsFunds = () => {
         <> 
             <div className='report-header'>
                 <div className='report-title'>
-                    <h1>Suscripciones-Busqueda de clientes de Fondos Mutuos</h1>
+                    <h1>Rescate - Busqueda de Clientes de Fondos Mutuos</h1>
                 </div>
                 <div className='report-body'>
                     <div className='report-body-filters'> 
@@ -176,7 +158,7 @@ const SubscriptionsSearchClientsFunds = () => {
                              </div>
 
                             <div className='report-filters-group'>
-                                <label>Seleccionar:</label>
+                                <label>Seleccione:</label>
                                 <select className='date-range-input' onChange={(e) => handleClickselect(e)} >
                                     <option value="1">Cuenta BT</option>
                                     <option value="2">Codigo Participe</option>
@@ -207,9 +189,7 @@ const SubscriptionsSearchClientsFunds = () => {
                 </div>
             </div>
  
-          <div className='report-table'>
-          {/* <Table data={tableData} /> */}
- 
+          <div className='report-table'> 
           <Grid container >
           <Grid item xs={1} >
           </Grid>
@@ -276,4 +256,4 @@ const SubscriptionsSearchClientsFunds = () => {
     )
 }
 
-export default SubscriptionsSearchClientsFunds
+export default RescueClientSearch
