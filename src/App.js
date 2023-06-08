@@ -8,20 +8,21 @@ import SubscriptionsSearchClientsFunds from './components/SubscriptionsSearchCli
 import DepsaElectronicChargeNaturalPerson from "./components/DepsaElectronicChargeNaturalPerson";
 import DepsaElectronicChargeJuridicalPerson from "./components/DepsaElectronicChargeJuridicalPerson";
 import SubscriptionRequestRecord from "./components/SubscriptionRequestRecord";
+import SuscriptionRequest from "./components/SuscriptionRequest";
 
 function App() {
   return (
     <BrowserRouter>
     <Layout>
-    <Routes> 
-     <Route path="/Documentary-Deb-Generation-System" element={<DocumentaryDebtGenerationSystem />} />
-     <Route path="/Documentation-Pending-Delivery" element={<DocumentationPendingDelivery />} />
-     <Route path="/Subscriptions-Search-Clients-Funds" element={<SubscriptionsSearchClientsFunds />} />
-     <Route path="/Depsa-Electronic-Charge-Natural-Person" element={<DepsaElectronicChargeNaturalPerson />} />
-     <Route path="/Depsa-Electronic-Charge-Juridical-Person" element={<DepsaElectronicChargeJuridicalPerson />} />
-     <Route path="/Subscription-Request-Record" element={<SubscriptionRequestRecord />} />
- 
-    </Routes>
+      <Routes>
+        <Route path="/Documentary-Deb-Generation-System" element={<DocumentaryDebtGenerationSystem />} />
+        <Route path="/Documentation-Pending-Delivery" element={<DocumentationPendingDelivery />} />
+        <Route path="/Subscriptions-Search-Clients-Funds" element={<SubscriptionsSearchClientsFunds />} />
+        <Route path="/Depsa-Electronic-Charge-Natural-Person" element={<DepsaElectronicChargeNaturalPerson />} />
+        <Route path="/Depsa-Electronic-Charge-Juridical-Person" element={<DepsaElectronicChargeJuridicalPerson />} />
+        <Route path="/Subscription-Request-Record" element={<SuscriptionRequest />} />
+        <Route path="/" element={<SubscriptionRequestRecord />} />
+      </Routes>
     </Layout>
     </BrowserRouter>
   );

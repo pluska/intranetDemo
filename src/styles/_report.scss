@@ -40,34 +40,6 @@
               width: 40%;
               margin-right: 1em;
             }
-            input {
-              width: 100%;
-              padding: 0.5em;
-              border: 0;
-              border-bottom: 1px solid $color-gray;
-              outline: none;
-              border-radius: 0;
-              &:focus {
-                border-bottom: 1px solid $primary-color;
-              }
-              &:hover {
-                border-bottom: 1px solid $primary-color;
-              }
-            }
-            select {
-              width: 90%;
-              padding: 0.5em;
-              border: 0;
-              border-bottom: 1px solid $color-gray;
-              outline: none;
-              border-radius: 0;
-              &:focus {
-                border-bottom: 1px solid $primary-color;
-              }
-              &:hover {
-                border-bottom: 1px solid $primary-color;
-              }
-            }
           }
         }
       }
@@ -85,8 +57,49 @@
 }
 
 
-
-
+input {
+  width: 100%;
+  padding: 0.5em;
+  border: 0;
+  border-bottom: 1px solid $color-gray;
+  outline: none;
+  border-radius: 0;
+  &:focus {
+    border-bottom: 1px solid $primary-color;
+  }
+  &:hover {
+    border-bottom: 1px solid $primary-color;
+  }
+}
+select {
+  width: 90%;
+  padding: 0.5em;
+  border: 0;
+  border-bottom: 1px solid $color-gray;
+  outline: none;
+  border-radius: 0;
+  &:focus {
+    border-bottom: 1px solid $primary-color;
+  }
+  &:hover {
+    border-bottom: 1px solid $primary-color;
+  }
+}
+textarea {
+  align-self: center;
+  width: 97%;
+  padding: 0.5em;
+  border: 0;
+  border-bottom: 1px solid $color-gray;
+  outline: none;
+  border-radius: 0;
+  &:focus {
+    border-bottom: 1px solid $primary-color;
+  }
+  &:hover {
+    border-bottom: 1px solid $primary-color;
+  }
+}
 
 
 
