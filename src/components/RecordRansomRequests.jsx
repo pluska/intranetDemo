@@ -219,20 +219,16 @@ const RecordRansomRequests = () => {
                                         {name: "Banco Pichincha"},
                                         {name: "Banco del Trabajo"},
                               ]} /> 
-                          </div> 
-                         
+                          </div>  
                           <div className='suscription-record-card__body__item w-20'>
                             <label className='suscription-record-card__body__item__label'>Nro. Cuenta:</label>
                             <input type='text' className='form-control' name='Nro. Cuenta'    />
-                          </div>
-     
-                          </> 
-
-
+                          </div> 
+                          </>   
                         }
                         {paymentMethod === 'checkOtherBank' &&
                         <>
-                        <div className='suscription-record-card__body__item w-50'>
+                         <div className='suscription-record-card__body__item w-50'>
                             <label className='suscription-record-card__body__item__label'>Seleccione Banco:</label>
                             <SearchSelect label='Tipo Cuenta' 
                               options= {[{name: "Banco del Credito del Peru"},
@@ -240,12 +236,11 @@ const RecordRansomRequests = () => {
                                         {name: "Banco Pichincha"},
                                         {name: "Banco del Trabajo"},
                               ]} /> 
-                          </div> 
-                         
-                          <div className='suscription-record-card__body__item w-20'>
+                         </div>  
+                         <div className='suscription-record-card__body__item w-20'>
                             <label className='suscription-record-card__body__item__label'>Nro. Cuenta:</label>
                             <input type='text' className='form-control' name='Nro. Cuenta'    />
-                          </div>
+                         </div>
                         </>
                         }
                         {paymentMethod === 'cash' &&
