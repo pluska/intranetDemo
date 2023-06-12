@@ -197,7 +197,7 @@ const RescueClientSearch = () => {
             <TableContainer component={Paper}></TableContainer>
 
        
-      <Table    className={classes.table} aria-label="customized table">
+      <Table  className={classes.table} aria-label="customized table">
       <TableHead>
       <TableRow style={{background:'red'}}> 
           <StyledTableCell align="left">Nombre del Cliente</StyledTableCell>

@@ -16,8 +16,6 @@ import SubscriptionRequestRecord from "./SubscriptionRequestRecord";
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
-
-
 const StyledTableCell = withStyles((theme) => ({
     head: {
       backgroundColor: '#444',
@@ -54,8 +52,6 @@ const StyledTableCell = withStyles((theme) => ({
 const SubscriptionsSearchClientsFunds = () => {
   
     const navigate = useNavigate();
-
-
     function createData(name, calories, fat, carbs) {
         return { name, calories, fat, carbs };
       } 
@@ -118,8 +114,7 @@ const SubscriptionsSearchClientsFunds = () => {
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
       };
-
-      
+ 
     const handleChangeRowsPerPage = (event) => {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
@@ -133,8 +128,7 @@ const SubscriptionsSearchClientsFunds = () => {
             setValueCombo(2);
         }
      } 
-
-
+ 
      function handleAlerta(event){ 
         console.log(event.currentTarget.id); 
         console.log(event.target.value); 
@@ -208,18 +202,15 @@ const SubscriptionsSearchClientsFunds = () => {
             </div>
  
           <div className='report-table'>
-          {/* <Table data={tableData} /> */}
- 
+          {/* <Table data={tableData} /> */} 
           <Grid container >
           <Grid item xs={1} >
           </Grid>
           <Grid item xs={10} >
-            <TableContainer component={Paper}></TableContainer>
-
-       
-      <Table    className={classes.table} aria-label="customized table">
-      <TableHead>
-      <TableRow style={{background:'red'}}> 
+            <TableContainer component={Paper}></TableContainer> 
+          <Table className={classes.table} aria-label="customized table">
+          <TableHead>
+          <TableRow style={{background:'red'}}> 
           <StyledTableCell align="left">Nombre del Cliente</StyledTableCell>
           <StyledTableCell align="left">Cuenta BT</StyledTableCell>
           <StyledTableCell align="left">Codigo Participe</StyledTableCell>
