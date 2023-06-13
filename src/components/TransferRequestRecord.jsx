@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SearchSelect from './SearchSelect'
 import Table from './Table'
 
-const RecordRansomRequests = () => {
+const TransferRequestRecord = () => {
     const [currentTag, setCurrentTag] = useState(1);
     const [personalSales, setPersonalSales] = useState("");
     const [paymentMethod, setPaymentMethod] = useState("");
@@ -49,13 +49,11 @@ const RecordRansomRequests = () => {
           ['', '', '', , ,'', '', '', '', '', '' ,'']
       ]
   }
-
-
+ 
     return (
-
       <div>
-
-     
+             <h2 style={{color:'red'}} className='suscription-record-card__title'>Registro de Solicitudes de Traspaso</h2>
+             
             <div className='suscription-record-card'>
             <div className='suscription-record-card__header'>
             <div className='suscription-record-card__header__tags'>
@@ -79,10 +77,13 @@ const RecordRansomRequests = () => {
                     Parte 3
                 </span>
             </div>
-                <h3 className='suscription-record-card__title'>32- CASTRO VELASQUEZ LEONCIO HERMOGENES</h3>
+                <h3 className='suscription-record-card__title'>4 - RICCE NICOLI JOSE O PFLUCKER MORENO MARIA LUISA</h3>
             </div> 
-            {currentTag === 1 &&
-                <div className='suscription-record-card__body'>
+             
+            {currentTag === 1 && 
+             <div className='suscription-record-card__body'>
+                 <h3 className='suscription-record-card__title' style={{color:'red'}}>Fondo Origen</h3>
+
                     <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Fondo mutuo:</label>
@@ -136,55 +137,99 @@ const RecordRansomRequests = () => {
                     
                 </div>
             }
-            {currentTag === 2 &&
-                <div className='suscription-record-card__body'>
-                    <div className='suscription-record-card__body__group'>
+
+            {currentTag === 2 && 
+
+
+<div className='suscription-record-card__body'>
+<h3 className='suscription-record-card__title' style={{color:'red'}}>Fondo Destino</h3>
+
+   <div className='suscription-record-card__body__group'>
+       <div className='suscription-record-card__body__item'>
+           <label className='suscription-record-card__body__item__label'>Fondo mutuo:</label>
+           <SearchSelect label='Seleccione un fondo' 
+            options={[{name: "Seleccione"},
+                      {name: "Scotia Fondo Premium $"},
+                      {name: "Scotia Fondo Cash $"},
+                      {name: "Scotia Fondo Cash S/."}]} />
+                   </div>
+                      <div className='suscription-record-card__body__item'>
+                        <label className='suscription-record-card__body__item__label'>Ult. Valor Cuota:</label>
+                        <input type='text' className='form-control' placeholder='S/.' />
+                       </div> 
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Cod. Empleado:</label>
                             <input type='text' className='form-control' placeholder='23117' />
                         </div>
                         <div className='suscription-record-card__body__item'>
-                            <label className='suscription-record-card__body__item__label'>Empleado:</label>
+                            <label className='suscription-record-card__body__item__label'>Nombre Empleado:</label>
                             <input type='text' className='form-control' placeholder='CHAVEZ MESTAZANA JHANSEN DEIBY' />
-                        </div>
- 
+                        </div> 
                     </div>
 
-
-                    <div className='suscription-record-card__body__group'>
-                        <div className='suscription-record-card__body__item__checkbox'>
-                            <label className='suscription-record-card__body__item__label'>Incluir Asesor:</label>
+                    <div className='suscription-record-card__body'> 
+                     <div className='suscription-record-card__body__group'>
+                     <div className='suscription-record-card__body__item'>
+                          <div className='suscription-record-card__body__item__checkbox'>
+                            <label className='suscription-record-card__body__item__label'>Asesor:</label>
                             <input type='checkbox' className='form-control' />
+                          </div> 
+                          </div> 
+                        <div className='suscription-record-card__body__item'>
+                            <label className='suscription-record-card__body__item__label'>Tipo Asesor:</label>
+                            <SearchSelect label='Seleccione' 
+                                options={[{name: "Seleccione"},
+                                        {name: "Asesor Corporativo Inversiones"},
+                                        {name: "Ejecutivo de Inversion"},
+                                         ]} />
+                        </div> 
+                        <div className='suscription-record-card__body__item'>
+                            <label className='suscription-record-card__body__item__label'>Asesor:</label>
+                            <SearchSelect label='Seleccione' 
+                                options={[{name: "Seleccione"},
+                                        {name: "BAYONA MAC PHERSON TIKSI"},
+                                        {name: "BERTINI WIESEE LUIS CARLOS"},
+                                        {name: "CATERIAO MENDOZA LILIANA PAOLA"}]} />
+                        </div> 
+                        <div className='suscription-record-card__body__item'>
+                            <label className='suscription-record-card__body__item__label'>Origen Cliente:</label>
+                            <SearchSelect label='Seleccione' 
+                                options={[{name: "Seleccione"},
+                                        {name: "PF:Profuturo"},
+                                        {name: "PRO:Premium"},
+                                        {name: "CP:Cartera Propia"}]} />
                         </div>
-                     </div>
-
+                     </div> 
                      <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item'>
                             <div className='suscription-record-card__body__item_radio_group'>
-                                <legend className='suscription-record-card__body__item__label'>Formas de Pago de la Suscripción:</legend>
-                                <div className='suscription-record-card__body__item__radio'>
-                                    <input type='radio' className='form-control' name='paymentMethod' value={"cash"} onChange={handlePaymentMethod} />
-                                    <label className='suscription-record-card__body__item__label' for="cash">Abono en Cuenta</label>
-                                </div>
-                                <div className='suscription-record-card__body__item__radio'>
-                                    <input type='radio' className='form-control' name='paymentMethod' value={"chargeOnAccount"} onChange={handlePaymentMethod} />
-                                    <label className='suscription-record-card__body__item__label' for="chargeOnAccount">Orden Pago en Agencia</label>
-                                </div>
-                                <div className='suscription-record-card__body__item__radio'>
-                                    <input type='radio' className='form-control' name='paymentMethod' value={"checkSameBank"} onChange={handlePaymentMethod} />
-                                    <label className='suscription-record-card__body__item__label' for="checkSameBank">Transferencia BCRP</label>
-                                </div>
-                                <div className='suscription-record-card__body__item__radio'>
-                                    <input type='radio' className='form-control' name='paymentMethod' value={"checkOtherBank"} onChange={handlePaymentMethod} />
-                                    <label className='suscription-record-card__body__item__label' for="checkOtherBank">Transferencia al Exterior</label>
-                                </div>
+                                
+ 
+                            <div className='suscription-record-card__body__item'>
+                            <label className='suscription-record-card__body__item__label'>CDR</label>
+                            <input type='number' className='form-control' placeholder='010' />
+                        </div>
+
+                        <div className='suscription-record-card__body__item'>
+                            <label className='suscription-record-card__body__item__label'>Oficina de Atencion:</label>
+                            <input type='number' className='form-control' placeholder='Centro Historico' />
+                        </div>
+ 
+                            <div className='suscription-record-card__body__item'>
+                            <label className='suscription-record-card__body__item__label'>Proposito del Fondo Mutuo:</label>
+                            <SearchSelect label='Seleccione' 
+                                options={[{name: "Seleccione"},
+                                         {name: "Rentabilizar"},
+                                         {name: "Planes Futuros"},
+                                         {name: "Vacaciones"},
+                                         {name: "Estudios"},
+                                         {name: "Ahorrar"},
+                                         {name: "Garantia de Operaciones de credito"}
+                                         ]} />
+                               </div> 
                             </div>
                         </div>
-                    </div> 
-                    
-
-
-
+                    </div>  
                     <div className='suscription-record-card__body__group'>
                         {paymentMethod === 'chargeOnAccount' && 
                          
@@ -243,47 +288,18 @@ const RecordRansomRequests = () => {
                          </div>
                         </>
                         }
-                        {paymentMethod === 'cash' &&
-                         <> 
-                         <div className='suscription-record-card__body__item w-50'>
-                            <label className='suscription-record-card__body__item__label'>Cuenta Bancaria de Participe:</label>
-                            <SearchSelect label='Tipo Cuenta' 
-                             options= {[{name: "CCME"},
-                                       {name: "LHME"},
-                             ]} /> 
-                        </div>
-                           
-                          <div className='suscription-record-card__body__item w-20'>
-                            <label className='suscription-record-card__body__item__label'>Nro. Cuenta:</label>
-                            <input type='text' className='form-control' name='Nro. Cuenta'    />
-                         </div>
-
-                         <div className='suscription-record-card__body__item w-10'>   
-                             <div className='suscription-record-card__body__item__checkbox'>
-                               <label className='suscription-record-card__body__item__label'>Nueva Cuenta:</label>
-                               <input type='checkbox' className='form-control' />
-                             </div> 
-                         </div> 
-                         </>
-                        } 
+                      
                     </div>   
                 </div>
+                </div>
             }
+           
             {currentTag === 3 &&
-                <div className='suscription-record-card__body'>
-                    
-                    <div className='suscription-record-card__body__group'>
-                        <div className='suscription-record-card__body__item'> 
-                            <label className='suscription-record-card__body__item__label'>Codigo de CDR:</label>
-                            <input type='text' className='form-control' placeholder='010' /> 
-                        </div>
-                        <div className='suscription-record-card__body__item'> 
-                            <label className='suscription-record-card__body__item__label'>Oficina de Atencion:</label>
-                            <input type='text' className='form-control' placeholder='Centro Historico' /> 
-                        </div>
-                    </div>
- 
 
+            
+                <div className='suscription-record-card__body'> 
+
+<h3 className='suscription-record-card__title' style={{color:'red'}}>Fondo Destino</h3>
                     <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item'>
                             <div className='suscription-record-card__body__item_radio_group'>
@@ -298,34 +314,23 @@ const RecordRansomRequests = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-
+                    </div> 
                     <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Observaciones:</label>
                             <textarea className='form-control' rows='3' placeholder='Ingrese sus observaciones'></textarea>
                         </div>
-                    </div>
-                     
-              
+                    </div> 
                     <div className='suscription-record-card__body__group__btns'>
                         <button className='btn btn-primary'>Grabar</button>
                         <button className='btn btn-default'>Limpiar</button>
                         <button className='btn btn-default'>Salir</button>
                  </div> 
-                </div>
-          
-          
-          }  
-
-                  
-         </div>
-
-          
-          </div>
-
-         
+                </div> 
+             }   
+          </div> 
+          </div> 
     )
 }
 
-export default RecordRansomRequests
+export default TransferRequestRecord

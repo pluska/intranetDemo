@@ -248,8 +248,7 @@ const SubscriptionRequestRecord = () => {
             <Grid container style={{marginTop:40}}>
               <Grid item xs={8} >
                   <strong><p style={{margin:4, fontSize:'12pt'}}>28- RODRIGUEZ LARRIN GONZALES DEL RIEGO DE AVENDAÑO LETICIA</p></strong>  
-              </Grid> 
-               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </Grid>  
                 <Grid item xs={2} >
                  <div className='report-body-btns'>
                         <button className='btn btn-primary'>Grabar</button>

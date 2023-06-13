@@ -51,10 +51,8 @@ const StyledTableCell = withStyles((theme) => ({
   }))(TableRow);
  
  
-const RescueClientSearch = () => {
-  
+const TransferClientSearch = () => {
     const navigate = useNavigate();
-
 
     function createData(name, calories, fat, carbs) {
         return { name, calories, fat, carbs };
@@ -63,8 +61,7 @@ const RescueClientSearch = () => {
     const rows = [
         createData('1', 'Edwin', '561615616', 'Activo'),
       ];
- 
-
+  
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(6); 
     const classes = useStyles(); 
@@ -73,20 +70,17 @@ const RescueClientSearch = () => {
     const formatDate = (date) => {
         return date < 10 ? `0${date}` : date
     }
-    const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
-   
-   
-    const [ValueCombo, setValueCombo] = React.useState(0);
-  
+    const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage); 
+    const [ValueCombo, setValueCombo] = React.useState(0); 
     const setList = [
         {
-           "NombredelCliente":"RODRIGUE LARRAIN GONZALES DEL RIEGO DE AVENDAÑ LETICIA",
-           "CuentaBT":"3925306",
-           "CodigoParticipe":"28",
+           "NombredelCliente":"Castro Velasquez Leoncio Hermogenes",
+           "CuentaBT":"8118460",
+           "CodigoParticipe":"32",
            "TipoCliente":"Particular",
-           "Segmento":"Preferente",
+           "Segmento":"Estandar",
            "TipoDocdelTitular":"L.E/.D.N.I",
-           "NumeroDocdelTitular":"07817640",
+           "NumeroDocdelTitular":"17805220",
            "TC":"",
            "Estatus":"", 
         }
@@ -95,13 +89,11 @@ const RescueClientSearch = () => {
     const options = [{label: "Recibido", value: 1}, {label: "Pendiente", value: 2},{label: "Observado", value: 3}];
     const userIdHandler = (value) => {
      console.log(value);
-    };
- 
+    }; 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
       };
-
-      
+ 
     const handleChangeRowsPerPage = (event) => {
         setRowsPerPage(parseInt(event.target.value, 10));
         setPage(0);
@@ -114,9 +106,7 @@ const RescueClientSearch = () => {
         }else if(event.target.value==='2'){
             setValueCombo(2);
         }
-     } 
-
-
+     }  
      function handleAlerta(event){ 
         console.log(event.currentTarget.id); 
         console.log(event.target.value); 
@@ -124,10 +114,10 @@ const RescueClientSearch = () => {
       if(event.currentTarget.id==1){
         Swal.fire({
             title: 'Alerta',
-            text: "OBLIGATORIO: Hacer firmar Contrato de Administracion de FM al cliente y ESCANEARLO a: jhansen.chavez@scotiabank.com.pe. El contrato original de P.Natural, entregarlo al jefe de Servicios para envio a la Almacenera bajo rotulo: Regularizacion y los contratos de P.juridica enviarlos a of.Scotia Fondos.",
-            // icon: 'warning',
-            //   showCancelButton: true,
-             confirmButtonColor: '#cc2229',
+            // text: "El Cliente no Cuenta con Perfil de Riesgo de Inversion. Proceda a realizar la evaluacion a travez de la herramienta 'Asesor de Inversiones' antes de realizar su traspaso.",
+           
+            text: "El participe aún NO HA FIRMADO el Contrato de Administracion de Fondos Mutuos.",
+            confirmButtonColor: '#cc2229',
             //  cancelButtonColor: '#cc2229',
              confirmButtonText: 'Cerrar'
           }).then((result) => {
@@ -136,7 +126,7 @@ const RescueClientSearch = () => {
                 //PostEditUser();
                 console.log('entraaaa'); 
                 // return <Navigate to='/' /> 
-                navigate("/Record-Ransom-Requests")
+                navigate("/Transfer-Request-Record")
             }
           })
       } 
@@ -147,7 +137,7 @@ const RescueClientSearch = () => {
         <> 
             <div className='report-header'>
                 <div className='report-title'>
-                    <h1>Rescate - Busqueda de Clientes de Fondos Mutuos</h1>
+                    <h1>Traspaso - Búsqueda de Clientes de Fondos Mutuos</h1>
                 </div>
                 <div className='report-body'>
                     <div className='report-body-filters'> 
@@ -256,4 +246,4 @@ const RescueClientSearch = () => {
     )
 }
 
-export default RescueClientSearch
+export default TransferClientSearch

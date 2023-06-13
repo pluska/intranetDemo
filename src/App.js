@@ -9,6 +9,10 @@ import SubscriptionRequestRecord from "./components/SubscriptionRequestRecord";
 import SuscriptionRequest from "./components/SuscriptionRequest";
 import RescueClientSearch from "./components/RescueClientSearch";
 import RecordRansomRequests from "./components/RecordRansomRequests";
+import TransferClientSearch from "./components/TransferClientSearch";
+import TransferRequestRecord from "./components/TransferRequestRecord";
+
+
 import './styles/App.scss';
 import DepsaNatural from "./components/DepsaNatural";
 
@@ -27,6 +31,10 @@ function App() {
           <Route path="/" element={<DepsaNatural />} />
           <Route path="/Rescue-Client-Search" element={<RescueClientSearch />} />
           <Route path="/Record-Ransom-Requests" element={<RecordRansomRequests />} />
+          <Route path="/Transfer-Client-Search" element={<TransferClientSearch />} />
+          <Route path="/Transfer-Request-Record" element={<TransferRequestRecord />} />
+           
+ 
         </Routes>
       </Layout>
     </BrowserRouter>
