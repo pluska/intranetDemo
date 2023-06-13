@@ -114,8 +114,10 @@ const TransferClientSearch = () => {
       if(event.currentTarget.id==1){
         Swal.fire({
             title: 'Alerta',
-            text: "El Cliente no Cuenta con Perfil de Riesgo de Inversion. Proceda a realizar la evaluacion a travez de la herramienta 'Asesor de Inversiones' antes de realizar su traspaso.",
-             confirmButtonColor: '#cc2229',
+            // text: "El Cliente no Cuenta con Perfil de Riesgo de Inversion. Proceda a realizar la evaluacion a travez de la herramienta 'Asesor de Inversiones' antes de realizar su traspaso.",
+           
+            text: "El participe aún NO HA FIRMADO el Contrato de Administracion de Fondos Mutuos.",
+            confirmButtonColor: '#cc2229',
             //  cancelButtonColor: '#cc2229',
              confirmButtonText: 'Cerrar'
           }).then((result) => {
@@ -124,7 +126,7 @@ const TransferClientSearch = () => {
                 //PostEditUser();
                 console.log('entraaaa'); 
                 // return <Navigate to='/' /> 
-                navigate("/Record-Ransom-Requests")
+                navigate("/Transfer-Request-Record")
             }
           })
       } 

@@ -48,7 +48,7 @@ const Layout = ({children}) => {
     {name: 'Registros', ref: '#',dropdown: [
       {name: 'Suscripciones', ref: '/Subscriptions-Search-Clients-Funds'} ,
       {name: 'Rescates', ref: '/Rescue-Client-Search'},
-      {name: 'Traspasos', ref: '/Trans-FerClient-Search'}  
+      {name: 'Traspasos', ref: '/Transfer-Client-Search'}  
 
       ]},
     {name: 'Información', ref: '#'},

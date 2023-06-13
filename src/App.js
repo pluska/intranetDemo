@@ -10,6 +10,9 @@ import SuscriptionRequest from "./components/SuscriptionRequest";
 import RescueClientSearch from "./components/RescueClientSearch";
 import RecordRansomRequests from "./components/RecordRansomRequests";
 import TransferClientSearch from "./components/TransferClientSearch";
+import TransferRequestRecord from "./components/TransferRequestRecord";
+
+
 import './styles/App.scss';
 
 
@@ -27,7 +30,9 @@ function App() {
           <Route path="/" element={<SubscriptionRequestRecord />} />
           <Route path="/Rescue-Client-Search" element={<RescueClientSearch />} />
           <Route path="/Record-Ransom-Requests" element={<RecordRansomRequests />} />
-          <Route path="/Trans-FerClient-Search" element={<TransferClientSearch />} />
+          <Route path="/Transfer-Client-Search" element={<TransferClientSearch />} />
+          <Route path="/Transfer-Request-Record" element={<TransferRequestRecord />} />
+           
  
         </Routes>
       </Layout>

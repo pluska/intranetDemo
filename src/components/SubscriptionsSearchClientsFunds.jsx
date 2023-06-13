@@ -59,7 +59,6 @@ const SubscriptionsSearchClientsFunds = () => {
     const rows = [
         createData('1', 'Edwin', '561615616', 'Activo'),
       ];
- 
 
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(6); 
@@ -70,28 +69,10 @@ const SubscriptionsSearchClientsFunds = () => {
         return date < 10 ? `0${date}` : date
     }
     const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
-   
-   
+ 
     const [ValueCombo, setValueCombo] = React.useState(0);
- 
-    // const tableData = {
-    //     th: [
-    //         { name: 'Nombre del Cliente', className: 'date' },
-    //         { name: 'Cuenta BT', className: 'date' },
-    //         { name: 'Codigo Participe', className: 'date' },
-    //         { name: 'Tipo Cliente', className: 'date' },
-    //         { name: 'Segmento', className: 'date' },
-    //         { name: 'Tipo Doc.del Titular', className: 'fund' },
-    //         { name: 'Numero Doc.del Titular', className: 'bt-balance' },
-    //         { name: 'T/C', className: 'bt-balance' },
-    //         { name: 'Estatus', className: 'bt-balance' },
-    //     ],
-    //     data: [
-    //         [  'Jimenez Tode Roberto', '1027', '263081','Particular' ,'Premium' ,
-    //             'L.E/.D.N.I', '07808494', '', ''], 
-    //     ]
-    // }
- 
+  
+
     const setList = [
         {
            "NombredelCliente":"Jimenez Tode Roberto",
