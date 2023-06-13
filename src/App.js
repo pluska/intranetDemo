@@ -10,6 +10,7 @@ import SuscriptionRequest from "./components/SuscriptionRequest";
 import RescueClientSearch from "./components/RescueClientSearch";
 import RecordRansomRequests from "./components/RecordRansomRequests";
 import './styles/App.scss';
+import DepsaNatural from "./components/DepsaNatural";
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
           <Route path="/Depsa-Electronic-Charge-Natural-Person" element={<DepsaElectronicChargeNaturalPerson />} />
           <Route path="/Depsa-Electronic-Charge-Juridical-Person" element={<DepsaElectronicChargeJuridicalPerson />} />
           <Route path="/Subscription-Request-Record" element={<SuscriptionRequest />} />
-          <Route path="/" element={<SubscriptionRequestRecord />} />
+          <Route path="/" element={<DepsaNatural />} />
           <Route path="/Rescue-Client-Search" element={<RescueClientSearch />} />
           <Route path="/Record-Ransom-Requests" element={<RecordRansomRequests />} />
         </Routes>

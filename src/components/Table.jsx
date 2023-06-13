@@ -8,14 +8,14 @@ const Table = ({data}) => {
         <table>
           <thead>
             <tr>
-              {data.th.map((item, index) => {
+              {data?.th?.map((item, index) => {
                 return <th key={index} className={item.className}>{item.name}</th>
               }
               )}
             </tr>
           </thead>
           <tbody>
-              {data.data.map((tr, index) => {
+              {data?.data?.map((tr, index) => {
                 return (
                   <tr key={index}>
                     {tr.map((item, index) => {

@@ -23,6 +23,12 @@ const SuscriptionRequest = () => {
         setAttentionChannel(e.target.value);
     }
     return (
+        <>
+        <div className='group-btns'>
+            <button className='btn btn-primary'>Grabar</button>
+            <button className='btn btn-default'>Limpiar</button>
+            <button className='btn btn-default'>Salir</button>
+        </div>
         <div className='suscription-record-card'>
             <div className='suscription-record-card__header'>
             <div className='suscription-record-card__header__tags'>
@@ -262,14 +268,10 @@ const SuscriptionRequest = () => {
                             <textarea className='form-control' rows='3' placeholder='Ingrese sus observaciones'></textarea>
                         </div>
                     </div>
-                    <div className='suscription-record-card__body__group__btns'>
-                        <button className='btn btn-primary'>Grabar</button>
-                        <button className='btn btn-default'>Limpiar</button>
-                        <button className='btn btn-default'>Salir</button>
-                    </div>
                 </div>
             }
         </div>
+        </>
     )
 }
 

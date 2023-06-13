@@ -138,3 +138,14 @@
     }
   }
 }
+.group-btns {
+  margin: 1.5rem auto;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  button {
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+}
