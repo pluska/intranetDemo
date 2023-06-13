@@ -24,6 +24,7 @@ const SuscriptionRequest = () => {
     }
     return (
         <>
+        <h2 style={{color:'red'}} className='suscription-record-card__title'>Registro de Solicitudes de Suscripcion</h2>
         <div className='group-btns'>
             <button className='btn btn-primary'>Grabar</button>
             <button className='btn btn-default'>Limpiar</button>
@@ -59,19 +60,24 @@ const SuscriptionRequest = () => {
                     <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Fondo mutuo:</label>
-                            <SearchSelect label='Seleccione un fondo' options={[{name: "Fondo 1"}, {name: "Fondo 2"}]} />
+                            <SearchSelect label='Seleccione un fondo' 
+                            options={[{name: "Scotia Fondo Premium $"}, 
+                                      {name: "Scotia Fondo Cash $"},
+                                      {name: "Scotia Fondo Cash S/."},
+                                      {name: "Scotia Fondo Premium s/."},
+                                      {name: "Scotia Fondo Mixto Balanceado"}]} />
                         </div>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Ult. Valor Cuota:</label>
-                            <input type='text' className='form-control' placeholder='S/.' />
+                            <input type='text' className='form-control' placeholder='US$. 24.790280' />
                         </div>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Fecha:</label>
-                            <input type='date'  />
+                            <input type='date' placeholder='13/06/2023' />
                         </div>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Hora:</label>
-                            <input type='time' className='form-control' />
+                            <input type='time' className='form-control' placeholder='16:33:00' />
                         </div>
                     </div>
                     <div className='suscription-record-card__body__group'>
@@ -83,25 +89,27 @@ const SuscriptionRequest = () => {
                     <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Nro. Total Cuotas Vig:</label>
-                            <input type='number' className='form-control' placeholder='0' />
+                            <input type='number' className='form-control' placeholder='0.000' />
                         </div>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Valorizado:</label>
-                            <input type='text' className='form-control' placeholder='S/.' />
+                            <input type='text' className='form-control' placeholder='US$. 0.00' />
                         </div>
                     </div>
                     <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Cod. Oficio:</label>
-                            <input type='text' className='form-control' placeholder='0' />
+                            <input type='text' className='form-control' placeholder='010' />
                         </div>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Ofic. de atención:</label>
-                            <SearchSelect label='Seleccione una oficina' options={[{name: "Oficina 1"}, {name: "Oficina 2"}]} />
+                            <input type='text' className='form-control' placeholder='CENTRO HISTORICO' />
+                           
+                            {/* <SearchSelect label='Seleccione una oficina' options={[{name: "Oficina 1"}, {name: "Oficina 2"}]} /> */}
                         </div>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Monto Suscripción:</label>
-                            <input type='text' className='form-control' placeholder='S/.' />
+                            <input type='text' className='form-control' placeholder='0.00' />
                         </div>
                     </div>
                 </div>
@@ -111,16 +119,16 @@ const SuscriptionRequest = () => {
                     <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Cod. Empleado:</label>
-                            <input type='text' className='form-control' placeholder='0000' />
+                            <input type='text' className='form-control' placeholder='23117' />
                         </div>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Empleado:</label>
-                            <input type='text' className='form-control' placeholder='Nombre del empleado' />
+                            <input type='text' className='form-control' placeholder='CHAVES MENTANZA JHANSEN DEIBY' />
                         </div>
                     </div>
                     <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item_radio_group'>
-                            <legend className='suscription-record-card__body__item__label'>Tipo de Seleccione Personal de Venta:</legend>
+                            <legend className='suscription-record-card__body__item__label'>Seleccione Personal de Venta:</legend>
                             <div className='suscription-record-card__body__item__radio'>
                                 <input type='radio' className='form-control' name='PersonalSales' value={"RSCode"} onChange={handlePersonalSales} />
                                 <label className='suscription-record-card__body__item__label' for="RSCode">Código del RS o personal de apoyo en la venta</label>
@@ -150,7 +158,18 @@ const SuscriptionRequest = () => {
                             </div>
                             <div className='suscription-record-card__body__item'>
                                 <label className='suscription-record-card__body__item__label'>Seleccione Asesor:</label>
-                                <SearchSelect label='Seleccione un asesor' options={[{name: "Asesor 1"}, {name: "Asesor 2"}]} />
+                                <SearchSelect label='Seleccione un asesor'
+                                 options={[{name: "BAYONA MAC PHERSON TIKSI"},
+                                           {name: "BERTINI WIESSE LUIS CRLOS"},
+                                           {name: "CATERIANO MENDOZA LILIANA PAOLA"}]} />
+                            </div>
+
+                            <div className='suscription-record-card__body__item'>
+                                <label className='suscription-record-card__body__item__label'>Seleccione Cliente:</label>
+                                <SearchSelect label='Seleccione un asesor'
+                                 options={[{name: "PF:Profuturo"}, 
+                                          {name: "PRO:Premium"},
+                                          {name: "CP:Cartera Propia"}]} />
                             </div>
                         </>
                         }

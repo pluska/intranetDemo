@@ -53,9 +53,13 @@ const RecordRansomRequests = () => {
 
     return (
 
-      <div>
-
-     
+      <div> 
+         <h2 style={{color:'red'}} className='suscription-record-card__title'>Registro de Solicitudes de Rescates</h2>
+           <div className='group-btns'>
+            <button className='btn btn-primary'>Grabar</button>
+            <button className='btn btn-default'>Limpiar</button>
+            <button className='btn btn-default'>Salir</button>
+           </div>
             <div className='suscription-record-card'>
             <div className='suscription-record-card__header'>
             <div className='suscription-record-card__header__tags'>
@@ -305,14 +309,7 @@ const RecordRansomRequests = () => {
                             <label className='suscription-record-card__body__item__label'>Observaciones:</label>
                             <textarea className='form-control' rows='3' placeholder='Ingrese sus observaciones'></textarea>
                         </div>
-                    </div>
-                     
-              
-                    <div className='suscription-record-card__body__group__btns'>
-                        <button className='btn btn-primary'>Grabar</button>
-                        <button className='btn btn-default'>Limpiar</button>
-                        <button className='btn btn-default'>Salir</button>
-                 </div> 
+                    </div> 
                 </div>
           
           
@@ -322,7 +319,7 @@ const RecordRansomRequests = () => {
          </div>
 
           
-          </div>
+      </div>
 
          
     )
