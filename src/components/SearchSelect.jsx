@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 
-const SearchSelect = ({label, options, onSearch}) => {
+const SearchSelect = ({label, options}) => {
   const [filteredOptions, setFilteredOptions] = useState(options)
   const [search, setSearch] = useState('')
   const [display, setDisplay] = useState(false)
@@ -32,9 +32,11 @@ const SearchSelect = ({label, options, onSearch}) => {
   }
 
   const handleSelect = (option) => {
+    console.log(option);
+    console.log(option.name);
     setSearch(option.name)
     setDisplay(false)
-    onSearch(option)
+    // onSearch(option.name)
   }
 
   return (

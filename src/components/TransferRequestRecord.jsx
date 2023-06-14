@@ -7,7 +7,9 @@ const TransferRequestRecord = () => {
     const [personalSales, setPersonalSales] = useState("");
     const [paymentMethod, setPaymentMethod] = useState("");
     const [thirdPartyFunds, setThirdPartyFunds] = useState(false);
-    const [attentionChannel, setAttentionChannel] = useState("");
+    const [attentionChannel, setAttentionChannel] = useState(""); 
+    const [checked, setChecked] = React.useState(false); 
+     
     const handleStage = (n) => {
         setCurrentTag(n);
     }
@@ -24,6 +26,18 @@ const TransferRequestRecord = () => {
     const handleAttentionChannel = (e) => {
         setAttentionChannel(e.target.value);
     }
+
+     const handleChange = (e) => {
+        console.log("entra check"); 
+        setChecked(!checked);
+      };
+
+      const handleSelectlgr =(e) => {
+        console.log(e.target.value);
+
+      }
+ 
+    console.log(checked);
 
     const tableData = {
       th: [
@@ -50,14 +64,15 @@ const TransferRequestRecord = () => {
       ]
   }
  
+
     return (
       <div>
-             <h2 style={{color:'red'}} className='suscription-record-card__title'>Registro de Solicitudes de Traspaso</h2>
-             <div className='group-btns'>
+            <h2 style={{color:'red'}} className='suscription-record-card__title'>Registro de Solicitudes de Traspaso</h2>
+            <div className='group-btns'>
             <button className='btn btn-primary'>Grabar</button>
             <button className='btn btn-default'>Limpiar</button>
             <button className='btn btn-default'>Salir</button>
-           </div>
+            </div>
             <div className='suscription-record-card'>
             <div className='suscription-record-card__header'>
             <div className='suscription-record-card__header__tags'>
@@ -82,8 +97,7 @@ const TransferRequestRecord = () => {
                 </span>
             </div>
                 <h3 className='suscription-record-card__title'>4 - RICCE NICOLI JOSE O PFLUCKER MORENO MARIA LUISA</h3>
-            </div> 
-             
+            </div>  
             {currentTag === 1 && 
              <div className='suscription-record-card__body'>
                  <h3 className='suscription-record-card__title' style={{color:'red'}}>Fondo Origen</h3>
@@ -135,10 +149,8 @@ const TransferRequestRecord = () => {
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Nro CRT's a Rescatar:</label>
                             <input type='text' className='form-control' placeholder='0' />
-                        </div>
-
-                    </div>
-                    
+                        </div> 
+                    </div> 
                 </div>
             }
 
@@ -173,56 +185,69 @@ const TransferRequestRecord = () => {
 
                     <div className='suscription-record-card__body'> 
                      <div className='suscription-record-card__body__group'>
-                     <div className='suscription-record-card__body__item'>
+                      <div className='suscription-record-card__body__item'>
                           <div className='suscription-record-card__body__item__checkbox'>
                             <label className='suscription-record-card__body__item__label'>Asesor:</label>
-                            <input type='checkbox' className='form-control' />
+                            <input type='checkbox' className='form-control' 
+                            // value={LastAsesor}  
+                            type="checkbox"
+                            checked={checked}
+                            onChange={handleChange}
+                            />
                           </div> 
-                          </div> 
-                        <div className='suscription-record-card__body__item'>
-                            <label className='suscription-record-card__body__item__label'>Tipo Asesor:</label>
-                            <SearchSelect label='Seleccione' 
-                                options={[{name: "Seleccione"},
-                                        {name: "Asesor Corporativo Inversiones"},
-                                        {name: "Ejecutivo de Inversion"},
-                                         ]} />
-                        </div> 
-                        <div className='suscription-record-card__body__item'>
-                            <label className='suscription-record-card__body__item__label'>Asesor:</label>
-                            <SearchSelect label='Seleccione' 
-                                options={[{name: "Seleccione"},
-                                        {name: "BAYONA MAC PHERSON TIKSI"},
-                                        {name: "BERTINI WIESEE LUIS CARLOS"},
-                                        {name: "CATERIAO MENDOZA LILIANA PAOLA"}]} />
-                        </div> 
-                        <div className='suscription-record-card__body__item'>
+                          </div>   
+                        
+                     {
+                      checked == true ?
+                      <> 
+                      <div className='suscription-record-card__body__item'>
+                      <label className='suscription-record-card__body__item__label'>Tipo Asesor:</label>
+                      <SearchSelect   label='Seleccione'  
+                                      options={[{name: "Seleccione"},
+                                      {name: "Asesor Corporativo Inversiones"},
+                                      {name: "Ejecutivo de Inversion"},
+                                      ]} />
+                      </div> 
+                      <div className='suscription-record-card__body__item'>
+                      <label className='suscription-record-card__body__item__label'>Asesor:</label>
+                      <SearchSelect    label='Seleccione'  
+                         options={[{name: "Seleccione"},
+                                 {name: "BAYONA MAC PHERSON TIKSI"},
+                                 {name: "BERTINI WIESEE LUIS CARLOS"},
+                                 {name: "CATERIAO MENDOZA LILIANA PAOLA"}]} />
+                     </div>
+                        {/* {
+                            <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Origen Cliente:</label>
                             <SearchSelect label='Seleccione' 
                                 options={[{name: "Seleccione"},
                                         {name: "PF:Profuturo"},
                                         {name: "PRO:Premium"},
                                         {name: "CP:Cartera Propia"}]} />
-                        </div>
-                     </div> 
+                            </div>
+                    } */}
+                     </> 
+                     :  
+                     <> 
+                     </> 
+                     } 
+
+                     </div>  
                      <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item'>
                             <div className='suscription-record-card__body__item_radio_group'>
-                                
- 
                             <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>CDR</label>
                             <input type='number' className='form-control' placeholder='010' />
-                        </div>
-
+                        </div> 
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Oficina de Atencion:</label>
                             <input type='number' className='form-control' placeholder='Centro Historico' />
-                        </div>
- 
-                            <div className='suscription-record-card__body__item'>
-                            <label className='suscription-record-card__body__item__label'>Proposito del Fondo Mutuo:</label>
-                            <SearchSelect label='Seleccione' 
-                                options={[{name: "Seleccione"},
+                        </div> 
+                        <div className='suscription-record-card__body__item'>
+                          <label className='suscription-record-card__body__item__label'>Proposito del Fondo Mutuo:</label>
+                           <SearchSelect label='Seleccione' 
+                             options={[{name: "Seleccione"},
                                          {name: "Rentabilizar"},
                                          {name: "Planes Futuros"},
                                          {name: "Vacaciones"},
@@ -230,11 +255,11 @@ const TransferRequestRecord = () => {
                                          {name: "Ahorrar"},
                                          {name: "Garantia de Operaciones de credito"}
                                          ]} />
-                               </div> 
-                            </div>
-                        </div>
+                            </div> 
+                         </div>
+                      </div>
                     </div>  
-                    <div className='suscription-record-card__body__group'>
+                  <div className='suscription-record-card__body__group'>
                         {paymentMethod === 'chargeOnAccount' && 
                          
                       <>  

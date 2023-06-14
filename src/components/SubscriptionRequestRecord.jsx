@@ -526,7 +526,7 @@ const SubscriptionRequestRecord = () => {
                                 id="demo-simple-select"
                                 // value={1}
                                 label="Nro. Cuenta"
-                                // onChange={handleChange}
+                                
                                >
                                 <MenuItem value={1}>Seleccione</MenuItem>
                                 <MenuItem value={2}>opcion1</MenuItem>
