@@ -65,7 +65,8 @@ const SuscriptionRequest = () => {
                                       {name: "Scotia Fondo Cash $"},
                                       {name: "Scotia Fondo Cash S/."},
                                       {name: "Scotia Fondo Premium s/."},
-                                      {name: "Scotia Fondo Mixto Balanceado"}]} />
+                                      {name: "Scotia Fondo Mixto Balanceado"},
+                                      {name: "Scotia Fondo DE Fondos Cortos Plazo Internacional"}]} />
                         </div>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Ult. Valor Cuota:</label>
