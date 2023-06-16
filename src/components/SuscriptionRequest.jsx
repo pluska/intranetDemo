@@ -239,21 +239,43 @@ const SuscriptionRequest = () => {
                        
                         }
                         {paymentMethod === 'checkSameBank' &&
-                        <div className='suscription-record-card__body__item w-50'>
-                            <label className='suscription-record-card__body__item__label'>N° de Cheque:</label>
-                            <input type='text' className='form-control' placeholder='0000' />
-                        </div>
+
+                      <>
+                          <div className='suscription-record-card__body__item w-50'>
+                                <label className='suscription-record-card__body__item__label'>Banco:</label>
+                                <select className='form-control'>
+                                    <option value=''>Scotiabank Peru S.A.A.</option>
+                                 </select>
+                          </div>
+                          <div className='suscription-record-card__body__item w-50'>
+                                   <label className='suscription-record-card__body__item__label'>N° de Cheque:</label>
+                                      <input type='text' className='form-control' placeholder='0000' />
+                          </div>
+                          <div className='suscription-record-card__body__item w-50'>
+                                         <label className='suscription-record-card__body__item__label'>N° de Cuenta:</label>
+                                      <input type='text' className='form-control' placeholder='0000' />
+                          </div>       
+                       </> 
                         }
                         {paymentMethod === 'checkOtherBank' &&
                         <>
-                        <div className='suscription-record-card__body__item w-50'>
-                            <label className='suscription-record-card__body__item__label'>N° de Cheque:</label>
-                            <input type='text' className='form-control' placeholder='0000' />
-                        </div>
-                        <div className='suscription-record-card__body__item w-50'>
-                            <label className='suscription-record-card__body__item__label'>Banco:</label>
-                            <input type='text' className='form-control' placeholder='Nombre del banco' />
-                        </div>
+                               <div className='suscription-record-card__body__item w-50'>
+                                <label className='suscription-record-card__body__item__label'>Banco:</label>
+                                <select className='form-control'>
+                                    <option value=''>Banco de Credito del Peru</option>
+                                    <option value=''>Banco Pichincha</option>
+                                    <option value=''>Banco del Trabajo</option>
+                                    <option value=''>Banco Central de Reserva del Peru</option> 
+                                 </select>
+                          </div>
+                          <div className='suscription-record-card__body__item w-50'>
+                                   <label className='suscription-record-card__body__item__label'>N° de Cheque:</label>
+                                      <input type='text' className='form-control' placeholder='0000' />
+                          </div>
+                          <div className='suscription-record-card__body__item w-50'>
+                                         <label className='suscription-record-card__body__item__label'>N° de Cuenta:</label>
+                                      <input type='text' className='form-control' placeholder='0000' />
+                          </div>    
                         </>
                         }
                     </div>
