@@ -189,8 +189,7 @@ const TransferRequestRecord = () => {
                           <div className='suscription-record-card__body__item__checkbox'>
                             <label className='suscription-record-card__body__item__label'>Asesor:</label>
                             <input type='checkbox' className='form-control' 
-                            // value={LastAsesor}  
-                            type="checkbox"
+                            // value={LastAsesor}   
                             checked={checked}
                             onChange={handleChange}
                             />
@@ -276,8 +275,7 @@ const TransferRequestRecord = () => {
                                     {name: "Agencia Cerro de Pasco"},
                                     {name: "Agencia Gamarra 3"},
                                     {name: "Agencia la Merced"},
-                                    {name: "Agencia Larapa"},
-                                  
+                                    {name: "Agencia Larapa"}, 
                           ]} /> 
                       </div> 
                       </> 

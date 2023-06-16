@@ -82,12 +82,12 @@ const SuscriptionRequest = () => {
                         </div>
                     </div>
                     <div className='suscription-record-card__body__group'>
+                        <div className='suscription-record-card__body__item'>
                         <div className='suscription-record-card__body__item__checkbox'>
                             <label className='suscription-record-card__body__item__label'>Firmo el contrato:</label>
                             <input type='checkbox' className='form-control' />
                         </div>
-                    </div>
-                    <div className='suscription-record-card__body__group'>
+                        </div>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Nro. Total Cuotas Vig:</label>
                             <input type='number' className='form-control' placeholder='0.000' />
@@ -95,8 +95,9 @@ const SuscriptionRequest = () => {
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Valorizado:</label>
                             <input type='text' className='form-control' placeholder='US$. 0.00' />
-                        </div>
+                        </div> 
                     </div>
+                  
                     <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Cod. Oficio:</label>
@@ -109,7 +110,7 @@ const SuscriptionRequest = () => {
                             {/* <SearchSelect label='Seleccione una oficina' options={[{name: "Oficina 1"}, {name: "Oficina 2"}]} /> */}
                         </div>
                         <div className='suscription-record-card__body__item'>
-                            <label className='suscription-record-card__body__item__label'>Monto Suscripción:</label>
+                            <label className='suscription-record-card__body__item__label'>Monto de Suscripción:</label>
                             <input type='text' className='form-control' placeholder='0.00' />
                         </div>
                     </div>
@@ -158,29 +159,34 @@ const SuscriptionRequest = () => {
                                 </select>
                             </div>
                             <div className='suscription-record-card__body__item'>
-                                <label className='suscription-record-card__body__item__label'>Seleccione Asesor:</label>
-                                <SearchSelect label='Seleccione un asesor'
-                                 options={[{name: "BAYONA MAC PHERSON TIKSI"},
-                                           {name: "BERTINI WIESSE LUIS CRLOS"},
-                                           {name: "CATERIANO MENDOZA LILIANA PAOLA"}]} />
+                                <label className='suscription-record-card__body__item__label'>Seleccione Asesor:</label> 
+                                <select className='form-control'>
+                                    <option value=''>Seleccione una opción</option>
+                                    <option value=''>BAYONA MAC PHERSON TIKSI</option>
+                                    <option value=''>BERTINI WIESSE LUIS CRLOS</option>
+                                    <option value=''>CATERIANO MENDOZA LILIANA PAOLA</option>
+                                </select>
                             </div>
 
                             <div className='suscription-record-card__body__item'>
                                 <label className='suscription-record-card__body__item__label'>Seleccione Cliente:</label>
-                                <SearchSelect label='Seleccione un asesor'
-                                 options={[{name: "PF:Profuturo"}, 
-                                          {name: "PRO:Premium"},
-                                          {name: "CP:Cartera Propia"}]} />
+                                     
+                                 <select className='form-control'>
+                                    <option value=''>Seleccione una opción</option>
+                                    <option value=''>PF:Profuturo</option>
+                                    <option value=''>PRO:Premium</option>
+                                    <option value=''>CP:Cartera Propia</option>
+                                 </select>
                             </div>
                         </>
                         }
                     </div>
-                    <div className='suscription-record-card__body__group'>
+                    {/* <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item w-50'>
                             <label className='suscription-record-card__body__item__label'>Monto de Flujos Nuevos</label>
                             <input type='text' className='form-control' placeholder='S/.' />
                         </div>
-                    </div>
+                    </div> */}
                     <div className='suscription-record-card__body__group'>
                         <div className='suscription-record-card__body__item'>
                             <div className='suscription-record-card__body__item_radio_group'>
@@ -204,12 +210,33 @@ const SuscriptionRequest = () => {
                             </div>
                         </div>
                     </div>
+
                     <div className='suscription-record-card__body__group'>
-                        {paymentMethod === 'chargeOnAccount' &&
-                        <div className='suscription-record-card__body__item w-50'>
-                            <label className='suscription-record-card__body__item__label'>N° de Cuenta:</label>
+                        {paymentMethod === 'chargeOnAccount' && 
+                        <>   
+                           <div className='suscription-record-card__body__item w-50'>
+                            <label className='suscription-record-card__body__item__label'>Cuenta Bancaria del Participe:</label>
+                                <select className='form-control'>
+                                    <option value=''>Seleccione Tipo Cuenta</option>
+                                    <option value=''>CCMN</option>
+                                    <option value=''>CCME</option>
+                                    <option value=''>LHMN</option>
+                                 </select>
+                           </div>
+
+                           <div className='suscription-record-card__body__item w-50'>
+                            <label className='suscription-record-card__body__item__label'>Nro. Cuenta:</label>
                             <input type='text' className='form-control' placeholder='0000' />
-                        </div>
+                           </div>
+
+                           <div className='suscription-record-card__body__item w-50'>
+                              <div className='suscription-record-card__body__item__checkbox'>
+                              <label className='suscription-record-card__body__item__label'>Nueva Cuenta:</label>
+                              <input type='checkbox' className='form-control' />
+                              </div>
+                           </div>
+                        </>
+                       
                         }
                         {paymentMethod === 'checkSameBank' &&
                         <div className='suscription-record-card__body__item w-50'>
@@ -230,6 +257,7 @@ const SuscriptionRequest = () => {
                         </>
                         }
                     </div>
+
                 </div>
             }
             {currentTag === 3 &&
