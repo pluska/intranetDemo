@@ -22,11 +22,16 @@ const SuscriptionRequest = () => {
     const handleAttentionChannel = (e) => {
         setAttentionChannel(e.target.value);
     }
+
+    const HandleGuardar=(e)=>{
+        
+    }
+
     return (
         <>
         <h2 style={{color:'red'}} className='suscription-record-card__title'>Registro de Solicitudes de Suscripcion</h2>
         <div className='group-btns'>
-            <button className='btn btn-primary'>Grabar</button>
+            <button className='btn btn-primary' onChange={HandleGuardar}>Grabar</button>
             <button className='btn btn-default'>Limpiar</button>
             <button className='btn btn-default'>Salir</button>
         </div>
@@ -289,16 +294,23 @@ const SuscriptionRequest = () => {
                             <label className='suscription-record-card__body__item__label'>Origen de Fondos:</label>
                             <select className='form-control'>
                                 <option value=''>Seleccione una opción</option>
-                                <option value=''>Fondos Propios</option>
-                                <option value=''>Fondos de Terceros</option>
+                                <option value=''>Ahorros</option>
+                                <option value=''>Herencia/Donaciones</option>
+                                <option value=''>Otorgamiento de un Credito</option>
+                                <option value=''>Venta de Bienes</option>
+                                <option value=''>Sueldo / Cts</option>
                             </select>
                         </div>
                         <div className='suscription-record-card__body__item'>
                             <label className='suscription-record-card__body__item__label'>Propósito del Fondo Mutuo:</label>
                             <select className='form-control'>
-                                <option value=''>Seleccione una opción</option>
-                                <option value=''>Fondos Propios</option>
-                                <option value=''>Fondos de Terceros</option>
+                                <option value=''>Seleccione una opción </option>
+                                <option value=''>Rentabilizar </option>
+                                <option value=''>Planes futuros </option>
+                                <option value=''>Vacaciones </option>
+                                <option value=''>Estudios </option>
+                                <option value=''>Ahorrar </option>
+                                <option value=''>Garantia de Operacion de Credito</option>
                             </select>
                         </div>
                     </div>
