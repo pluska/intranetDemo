@@ -5,7 +5,7 @@ import DocumentationPendingDelivery from './components/DocumentationPendingDeliv
 import SubscriptionsSearchClientsFunds from './components/SubscriptionsSearchClientsFunds';
 import DepsaElectronicChargeNaturalPerson from "./components/DepsaElectronicChargeNaturalPerson";
 import DepsaElectronicChargeJuridicalPerson from "./components/DepsaElectronicChargeJuridicalPerson";
-import SubscriptionRequestRecord from "./components/SubscriptionRequestRecord";
+ 
 import SuscriptionRequest from "./components/SuscriptionRequest";
 import RescueClientSearch from "./components/RescueClientSearch";
 import RecordRansomRequests from "./components/RecordRansomRequests";

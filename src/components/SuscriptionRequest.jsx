@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import SearchSelect from './SearchSelect'
+import Swal from 'sweetalert2';
+ 
+import { useNavigate } from "react-router-dom";
 
 const SuscriptionRequest = () => {
+
+    const navigate = useNavigate();
     const [currentTag, setCurrentTag] = useState(1);
     const [personalSales, setPersonalSales] = useState("");
     const [paymentMethod, setPaymentMethod] = useState("");
@@ -23,15 +28,79 @@ const SuscriptionRequest = () => {
         setAttentionChannel(e.target.value);
     }
 
-    const HandleGuardar=(e)=>{
-        
-    }
+    const HandleGuardar=(event)=>{ 
+            console.log(event.currentTarget.id); 
+            console.log(event.target.value);
+            if(event.currentTarget.value==1){
+            Swal.fire({
+                title: 'Confirmación',
+                // text: "Importante confirmar con el cliente lo siguiente:  El Fondo Mutuo elegido es :Scotia Fondo Cash $",
+                html: `
+                <div style="text-align:justify;">
+                <p>Importante confirmar con el cliente lo siguiente:</p>
+                <label>El Fondo Mutuo elegido es : SCOTIA FONDO CASH $</label> 
+                <label>El Monto a suscribir es : $565,656.00</label> 
+                <label>La moneda del fondo Mutuo es :$</label> 
+                <label>Asesor: Bayona Mac Pherson Tiksi</label> 
+                <label>Monto de Flujo Nuevo :$565.00</label>
+                <br><br>
+                <label>Una vez confirmada la operacion en ventanilla , esta no podra ser extornada</label>  
+                <br><br>
+                <label>¿confirma los datos de la suscripcion?</label>  
+                </div>
+                `,
+                // icon: 'warning',
+                 showCancelButton: true,
+                 confirmButtonColor: '#cc2229',
+                 cancelButtonColor: '#fffff',
+                 confirmButtonText: 'Aceptar'
+              }).then((result) => {
+                console.log(result); 
+                if (result.isConfirmed) {
+                    //PostEditUser();
+                    console.log('entraaaa'); 
+                    // return <Navigate to='/' /> 
+                    // navigate("/Subscription-Request-Record")
+                    Swal.fire({
+                        title: 'Confirmación',
+                        html: `
+                        <div style="text-align:justify;"> 
+                        <label>¿Deseas continuar con la solicitud de suscripcion?</label>  
+                        </div>
+                        `,
+                         showCancelButton: true,
+                         confirmButtonColor: '#cc2229',
+                         cancelButtonColor: '#fffff',
+                         confirmButtonText: 'Aceptar'
+                      }).then((result) => {
+                         console.log(result); 
+                         if (result.isConfirmed) { 
+                                Swal.fire({
+                                title: 'Informacion',
+                                html: `
+                                <div style="text-align:justify;"> 
+                                <label>El registro de la solicitud de suscripcion fue un exito</label>  
+                                </div>
+                                `,
+                                 showCancelButton: false,
+                                 confirmButtonColor: '#cc2229',
+                                //scancelButtonColor: '#fffff',
+                                 confirmButtonText: 'cerrar'
+                                 }).then((result) => {
+                                     navigate("/Subscriptions-Search-Clients-Funds")
+                                 }) 
+                         }}) 
+                   } 
+              })
+           } 
+        }
+  
 
     return (
         <>
         <h2 style={{color:'red'}} className='suscription-record-card__title'>Registro de Solicitudes de Suscripcion</h2>
         <div className='group-btns'>
-            <button className='btn btn-primary' onChange={HandleGuardar}>Grabar</button>
+            <button className='btn btn-primary' onClick={(e) => HandleGuardar(e)}     value={1}>Grabar</button>
             <button className='btn btn-default'>Limpiar</button>
             <button className='btn btn-default'>Salir</button>
         </div>

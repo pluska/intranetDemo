@@ -12,7 +12,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import TablePagination from '@material-ui/core/TablePagination';
-import SubscriptionRequestRecord from "./SubscriptionRequestRecord";
+ 
 import { Navigate } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
@@ -52,6 +52,8 @@ const StyledTableCell = withStyles((theme) => ({
 const SubscriptionsSearchClientsFunds = () => {
   
     const navigate = useNavigate();
+
+
     function createData(name, calories, fat, carbs) {
         return { name, calories, fat, carbs };
       } 
